@@ -22,64 +22,6 @@ public class GameHandler : MonoBehaviour {
       private string sceneName;
       public static string lastLevelDied;  //allows replaying the Level where you died
 
-      void Start(){
-            player = GameObject.FindWithTag("Player");
-            sceneName = SceneManager.GetActiveScene().name;
-            //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
-                  playerHealth = StartPlayerHealth;
-            //}
-            updateStatsDisplay();
-      }
-
-      public void playerGetTokens(int newTokens){
-            gotTokens += newTokens;
-            updateStatsDisplay();
-      }
-
-      public void playerGetHit(int damage){
-           if (isDefending == false){
-                  playerHealth -= damage;
-                  if (playerHealth >=0){
-                        updateStatsDisplay();
-                  }
-                  if (damage > 0){
-                        player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
-                  }
-            }
-
-           if (playerHealth > StartPlayerHealth){
-                  playerHealth = StartPlayerHealth;
-                  updateStatsDisplay();
-            }
-
-           if (playerHealth <= 0){
-                  playerHealth = 0;
-                  updateStatsDisplay();
-                  playerDies();
-            }
-      }
-
-      public void updateStatsDisplay(){
-            Text healthTextTemp = healthText.GetComponent<Text>();
-            healthTextTemp.text = "HEALTH: " + playerHealth;
-
-            Text tokensTextTemp = tokensText.GetComponent<Text>();
-            tokensTextTemp.text = "GOLD: " + gotTokens;
-      }
-
-      public void playerDies(){
-            player.GetComponent<PlayerHurt>().playerDead();       //play Death animation
-            lastLevelDied = sceneName;       //allows replaying the Level where you died
-            StartCoroutine(DeathPause());
-      }
-
-      IEnumerator DeathPause(){
-            player.GetComponent<PlayerMove>().isAlive = false;
-            player.GetComponent<PlayerJump>().isAlive = false;
-            yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("EndLose");
-      }
-
       public void StartGame() {
             SceneManager.LoadScene("Level1");
       }
