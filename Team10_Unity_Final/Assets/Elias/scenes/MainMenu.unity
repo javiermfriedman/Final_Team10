@@ -975,15 +975,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1098343734470759258, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 265.75662
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098343734470759258, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 255.46521
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098343734470759258, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6337876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098343734470759258, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1017,11 +1017,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameHandler
       objectReference: {fileID: 0}
+    - target: {fileID: 1455350040570714882, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
+      propertyPath: m_TagString
+      value: GameHandler
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1455350040570714882, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1847878286114489557}
   m_SourcePrefab: {fileID: 100100000, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
+--- !u!1 &1847878286114489556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1455350040570714882, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
+  m_PrefabInstance: {fileID: 1847878286114489555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1847878286114489557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847878286114489556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd67db07d7c454174acd11c5dbe2d45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8027423213437751549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1118,6 +1142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: button_MENU
       objectReference: {fileID: 0}
+    - target: {fileID: 7732318371139331512, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1847878286114489556}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
