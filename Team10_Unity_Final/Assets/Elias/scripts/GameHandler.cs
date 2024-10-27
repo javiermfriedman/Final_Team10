@@ -29,6 +29,7 @@ public class GameHandler : MonoBehaviour {
       // Return to MainMenu
       public void RestartGame() {
             Time.timeScale = 1f;
+            GameHandler_PauseMenu.GameisPaused = false;
             SceneManager.LoadScene("MainMenu");
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
@@ -37,6 +38,7 @@ public class GameHandler : MonoBehaviour {
       // Replay the Level where you died
       public void ReplayLastLevel() {
             Time.timeScale = 1f;
+            GameHandler_PauseMenu.GameisPaused = false;
             SceneManager.LoadScene(lastLevelDied);
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
