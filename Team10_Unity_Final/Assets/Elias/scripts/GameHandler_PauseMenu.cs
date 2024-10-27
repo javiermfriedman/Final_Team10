@@ -14,7 +14,8 @@ public class GameHandler_PauseMenu : MonoBehaviour {
 
         void Awake(){
                 pauseMenuUI.SetActive(true); // so slider can be set
-                SetLevel (volumeLevel);
+                volumeLevel = 1.0f; // Set default volume level
+                SetLevel(volumeLevel); // Apply the volume to the mixer
                 GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
                 if (sliderTemp != null){
                         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
@@ -51,6 +52,7 @@ public class GameHandler_PauseMenu : MonoBehaviour {
         }
 
         public void SetLevel(float sliderValue){
+            Debug.Log("Slider Value: " + sliderValue); // Check slider value
                 mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
                 volumeLevel = sliderValue;
         }

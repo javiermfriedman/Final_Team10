@@ -1,6 +1,7 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -17,42 +18,47 @@ public class GameHandler : MonoBehaviour {
       public bool isDefending = false;
 
       public static bool stairCaseUnlocked = false;
-      //this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
 
       private string sceneName;
-      public static string lastLevelDied;  //allows replaying the Level where you died
+      public static string lastLevelDied;
+
+      // Volume Control
+      public AudioMixer mixer;
+      public static float volumeLevel = 1.0f;
 
       public void StartGame() {
             SceneManager.LoadScene("Level1");
       }
 
-      // Return to MainMenu
       public void RestartGame() {
             Time.timeScale = 1f;
             GameHandler_PauseMenu.GameisPaused = false;
             SceneManager.LoadScene("MainMenu");
-             // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
       }
 
-      // Replay the Level where you died
       public void ReplayLastLevel() {
             Time.timeScale = 1f;
             GameHandler_PauseMenu.GameisPaused = false;
             SceneManager.LoadScene(lastLevelDied);
-             // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
       }
 
       public void QuitGame() {
-                #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                Application.Quit();
-                #endif
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
       }
 
       public void Credits() {
             SceneManager.LoadScene("Credits");
+      }
+
+      // SetLevel for Slider in Pause Menu
+      public void SetLevel(float sliderValue) {
+            mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+            volumeLevel = sliderValue;
       }
 }
