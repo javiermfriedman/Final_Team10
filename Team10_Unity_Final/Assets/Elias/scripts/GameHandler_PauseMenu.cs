@@ -13,7 +13,7 @@ public class GameHandler_PauseMenu : MonoBehaviour {
         private Slider sliderVolumeCtrl;
 
         void Awake(){
-                pauseMenuUI.SetActive(true); // so slider can be set
+                pauseMenuUI.SetActive(false); // so slider can be set
                 volumeLevel = 1.0f; // Set default volume level
                 SetLevel(volumeLevel); // Apply the volume to the mixer
                 GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
