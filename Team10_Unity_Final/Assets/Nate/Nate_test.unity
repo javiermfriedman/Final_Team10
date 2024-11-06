@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 229074569}
   - component: {fileID: 229074568}
   - component: {fileID: 229074567}
+  - component: {fileID: 229074570}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,6 +216,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229074570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229074566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3f747a7b3684119900c491197d9b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  damping: 0.5
+  target: {fileID: 241690649}
 --- !u!1 &241690639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4689453407574241436, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
@@ -232,6 +248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c367dcbf808e14624986c981ce39e896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &241690649 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 751691464966720450, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
+  m_PrefabInstance: {fileID: 8306501406198410103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2127392209
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 299849951120159430, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 979843033254169500, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -478,6 +503,10 @@ PrefabInstance:
     - target: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
       propertyPath: m_Name
       value: Enemy_Run
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
