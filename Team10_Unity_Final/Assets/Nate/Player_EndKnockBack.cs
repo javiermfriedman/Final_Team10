@@ -12,7 +12,7 @@ public class Player_EndKnockBack : MonoBehaviour {
        }
 
        IEnumerator EndKnockBack(Rigidbody2D myRB){
-              yield return new WaitForSeconds(0.1f);
+              yield return new WaitForSeconds(0.2f);
               myRB.velocity= new Vector3(0,0,0);
        }
 }
