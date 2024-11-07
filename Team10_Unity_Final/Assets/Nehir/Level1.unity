@@ -786,27 +786,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2186656497704229670, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 362126971}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1455350040570714882, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 1392864022}
-    - targetCorrespondingSourceObject: {fileID: 1455350040570714882, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1392864021}
   m_SourcePrefab: {fileID: 100100000, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
 --- !u!1 &1392864020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1455350040570714882, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
   m_PrefabInstance: {fileID: 1392864019}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1392864021
+--- !u!114 &1392864021 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2186656497704229670, guid: 45c4afefb4e384529a3ad5bdd9190aaa, type: 3}
+  m_PrefabInstance: {fileID: 1392864019}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392864020}
   m_Enabled: 1
@@ -814,8 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea603e64f62a94bdd841d2338b6ec5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 362126971}
-  mixer: {fileID: 0}
 --- !u!114 &1392864022
 MonoBehaviour:
   m_ObjectHideFlags: 0

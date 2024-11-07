@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerMoveAround : MonoBehaviour {
+public class playerMove : MonoBehaviour {
 
       //public Animator anim;
       //public AudioSource WalkSFX;
