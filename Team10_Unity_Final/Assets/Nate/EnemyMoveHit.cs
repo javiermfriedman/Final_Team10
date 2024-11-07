@@ -17,7 +17,9 @@ public class EnemyMoveHit : MonoBehaviour {
        public bool isAttacking = false;
        private float scaleX;
 
-              public float knockBackForce = 20f;
+       public float knockBackForce = 20f;
+
+       private EnemyMeleeDamage meleeDamage;
 
 
        void Start () {
@@ -51,20 +53,36 @@ public class EnemyMoveHit : MonoBehaviour {
        }
 
            public void OnCollisionEnter2D(Collision2D other){
+                     Debug.Log("hit by hairball");
+
+              if (other.gameObject.tag == "hairBall") {
+                     Debug.Log("hit by hairball");  // Specific log for hairball collision
+                     EnemyLives -= 1;
+
+                     if (EnemyLives == 0) {
+                            Destroy(gameObject);
+                     }
+                     
+              }
+
+
               if (other.gameObject.tag == "Player") {
                      isAttacking = true;
                      //anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
+
+
                      //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
                      //StartCoroutine(HitEnemy());
 
                      //Tell the player to STOP getting knocked back before getting knocked back:
-                     other.gameObject.GetComponent<Player_EndKnockBack>().EndKnockBack();
-                     //Add force to the player, pushing them back without teleporting:
-                    Rigidbody2D pushRB = other.gameObject.GetComponent<Rigidbody2D>();
-                    Vector2 moveDirectionPush = rb2D.transform.position - other.transform.position;
-                    pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
+              //        other.gameObject.GetComponent<Player_EndKnockBack>().EndKnockBack();
+              //        //Add force to the player, pushing them back without teleporting:
+              //       Rigidbody2D pushRB = other.gameObject.GetComponent<Rigidbody2D>();
+              //       Vector2 moveDirectionPush = rb2D.transform.position - other.transform.position;
+              //       pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
               }
+
        }
 
 

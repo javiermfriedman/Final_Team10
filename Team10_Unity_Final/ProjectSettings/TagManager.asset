@@ -7,6 +7,8 @@ TagManager:
   - Ignored
   - GameHandler
   - PauseMenuSlider
+  - hairBall
+  - bad_guy
   layers:
   - Default
   - TransparentFX
