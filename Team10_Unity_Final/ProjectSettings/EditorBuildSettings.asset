@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Elias/scenes/MainMenu.unity
     guid: e8d03dad2592c47f49a35491154e3e48
   - enabled: 1
-    path: Assets/Nehir/Level1.unity
-    guid: 1b8f50dd130f64fccae2c57cf8e9487b
-  - enabled: 1
     path: Assets/Elias/scenes/Credits.unity
     guid: 782afcca6d96a4f5b8a3d4c9465e7154
+  - enabled: 1
+    path: Assets/Nate/Nate_test.unity
+    guid: e772ec1f203f548e999c6f90e6596b02
   m_configObjects: {}

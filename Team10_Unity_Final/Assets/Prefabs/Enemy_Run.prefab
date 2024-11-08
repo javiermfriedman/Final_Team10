@@ -123,10 +123,10 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   speed: 4
   damage: 10
-  EnemyLives: 3
+  EnemyLives: 1
   attackRange: 10
   isAttacking: 0
-  knockBackForce: 20
+  knockBackForce: 0
 --- !u!1 &5898969357215583962
 GameObject:
   m_ObjectHideFlags: 0

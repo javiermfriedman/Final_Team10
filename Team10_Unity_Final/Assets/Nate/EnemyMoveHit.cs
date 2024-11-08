@@ -10,14 +10,14 @@ public class EnemyMoveHit : MonoBehaviour {
        private Transform target;
        public int damage = 10;
 
-       public int EnemyLives = 3;
+       public int EnemyLives = 1;
        private GameHandler gameHandler;
 
        public float attackRange = 10;
        public bool isAttacking = false;
        private float scaleX;
 
-       public float knockBackForce = 20f;
+       public float knockBackForce = 0f;
 
        private EnemyMeleeDamage meleeDamage;
 

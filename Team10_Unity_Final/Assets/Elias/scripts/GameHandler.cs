@@ -81,7 +81,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Nate_test");
       }
 
       // Return to MainMenu
