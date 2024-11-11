@@ -9,21 +9,16 @@ public class ghostMode : MonoBehaviour
 
     void Start()
     {
-        playerCollider = GetComponent<Collider2D>(); // Use Collider2D for 2D games
+        playerCollider = GetComponent<Collider2D>(); 
         spriteToggle = GetComponent<SpriteToggle>();
-
-        // Check if the 2D collider exists
-        if (playerCollider == null)
-        {
-            Debug.LogError("No Collider2D found on the Player GameObject. Please add one in the Inspector.");
-        }
     }
 
     void Update()
     {
-        // Proceed only if playerCollider and spriteToggle are available
-        if (playerCollider != null && spriteToggle != null)
+        // Check that sprite toggle is not null to avoid any issues
+        if (spriteToggle != null)
         {
+            // Have the collider enabled if not in ghost mode, otherwise not enable it
             playerCollider.enabled = !spriteToggle.isGhostMode;
         }
     }
