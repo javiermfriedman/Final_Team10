@@ -8,6 +8,9 @@ public class SpriteToggle : MonoBehaviour
     private bool isSprite1Active = true;
     public GameObject screen; // Reference to the screen GameObject
 
+    public bool isGhostMode = false; // Boolean to track ghost mode
+    public AudioSource ghostSound; // Reference to the AudioSource for ghost sound
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -16,6 +19,11 @@ public class SpriteToggle : MonoBehaviour
         if (screen != null)
         {
             screen.SetActive(false); // Start with screen off
+        }
+
+        if (ghostSound != null)
+        {
+            ghostSound.Stop(); // Ensure sound is off at the start
         }
     }
 
@@ -32,10 +40,20 @@ public class SpriteToggle : MonoBehaviour
         if (isSprite1Active)
         {
             spriteRenderer.sprite = sprite2;
+            isGhostMode = true; // Set to ghost mode
+            if (ghostSound != null)
+            {
+                ghostSound.Play(); // Play ghost sound when in ghost mode
+            }
         }
         else
         {
             spriteRenderer.sprite = sprite1;
+            isGhostMode = false; // Set to normal mode
+            if (ghostSound != null)
+            {
+                ghostSound.Stop(); // Stop ghost sound when exiting ghost mode
+            }
         }
 
         isSprite1Active = !isSprite1Active; // Toggle the state
