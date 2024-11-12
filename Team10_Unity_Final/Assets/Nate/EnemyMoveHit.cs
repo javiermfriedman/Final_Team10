@@ -21,6 +21,9 @@ public class EnemyMoveHit : MonoBehaviour {
 
        private EnemyMeleeDamage meleeDamage;
 
+       public SpriteToggle spriteToggle;
+       
+
 
        void Start () {
               anim = GetComponentInChildren<Animator> ();
@@ -34,9 +37,18 @@ public class EnemyMoveHit : MonoBehaviour {
               if (GameObject.FindWithTag ("GameHandler") != null) {
                   gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
               }
+
+                  spriteToggle = FindObjectOfType<SpriteToggle>();
+              if (spriteToggle == null)
+              {
+                     Debug.LogWarning("SpriteToggle component not found! Ghost mode may not work as expected.");
+              }
        }
 
        void Update () {
+
+          if (spriteToggle != null && !spriteToggle.isGhostMode)
+          {
               float DistToPlayer = Vector3.Distance(transform.position, target.position);
 
               if ((target != null) && (DistToPlayer <= attackRange)){
@@ -49,6 +61,7 @@ public class EnemyMoveHit : MonoBehaviour {
                                     gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
                     }
               }
+          }
                //else { anim.SetBool("Walk", false);}
        }
 

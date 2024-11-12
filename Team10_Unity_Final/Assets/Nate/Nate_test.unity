@@ -465,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPlayerHealth: 100
   healthText: {fileID: 1483129601}
-  tokensText: {fileID: 0}
+  tokensText: {fileID: 1688520005}
   isDefending: 0
 --- !u!4 &586970728
 Transform:
