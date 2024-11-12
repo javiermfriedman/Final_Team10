@@ -10,9 +10,16 @@ public class PlayerShooting : MonoBehaviour
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
 
+    public SpriteToggle spriteToggle;
+
     void Start(){
         // idk what an animator is I guess we will have this later 
         //animator = gameObject.GetComponentInChildren<Animator>();
+                spriteToggle = FindObjectOfType<SpriteToggle>();
+              if (spriteToggle == null)
+              {
+                     Debug.LogWarning("SpriteToggle component not found! Ghost mode may not work as expected.");
+              }
     }
 
     void Update(){
@@ -26,6 +33,10 @@ public class PlayerShooting : MonoBehaviour
     }
 
     void playerFire(){
+
+        if (!spriteToggle.isGhostMode) {
+
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
@@ -45,5 +56,6 @@ public class PlayerShooting : MonoBehaviour
         }
 
         Destroy(projectile, 5f);
+        }
     }
 }

@@ -38,7 +38,7 @@ public class EnemyMoveHit : MonoBehaviour {
                   gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
               }
 
-                  spriteToggle = FindObjectOfType<SpriteToggle>();
+              spriteToggle = FindObjectOfType<SpriteToggle>();
               if (spriteToggle == null)
               {
                      Debug.LogWarning("SpriteToggle component not found! Ghost mode may not work as expected.");
@@ -75,7 +75,6 @@ public class EnemyMoveHit : MonoBehaviour {
                      if (EnemyLives == 0) {
                             Destroy(gameObject);
                      }
-                     
               }
 
 
