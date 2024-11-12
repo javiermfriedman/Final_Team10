@@ -35,6 +35,15 @@ public class PlayerShooting : MonoBehaviour
 
         projectile.GetComponent<Rigidbody2D>().AddForce(direction * projectileSpeed, ForceMode2D.Impulse);
 
+        // Ignore collision between the player and the projectile
+        Collider2D playerCollider = GetComponent<Collider2D>();
+        Collider2D projectileCollider = projectile.GetComponent<Collider2D>();
+
+        if (projectileCollider != null && playerCollider != null)
+        {
+            Physics2D.IgnoreCollision(playerCollider, projectileCollider);
+        }
+
         Destroy(projectile, 5f);
     }
 }
