@@ -1,0 +1,492 @@
+fileFormatVersion: 2
+guid: dc61ed5ccc4014ecaa4a76a803dbc491
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8588f1bbe7d15410aae47b5403db52b5
+      internalID: 135180452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 187.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a9da5a7926c4242a690ba411ecabdd
+      internalID: 666406476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 187.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4c6b27191204cb69b301723ef3a8be
+      internalID: -894087397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_3
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 187.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7f6a6a6e8484043a4445e8a8bc51e0
+      internalID: 1617966297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a86e901d71dc4454ae8145c9c673463
+      internalID: 840944237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 125.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c271397a187494c75b46bb6baffffbda
+      internalID: 1605124166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_6
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 125.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5351275614a4a49fc98709fafd4bf3af
+      internalID: -1956576541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 125.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7743f7ba8e945daaf01927b5903367
+      internalID: 456659212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdb28812654d490ba069db9e65105ad
+      internalID: -1750669359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_9
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 63.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b0f630223e248b0b793abe7007a457
+      internalID: 318934870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_10
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 63.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba97d6fb36d424e2cacf371e28b54253
+      internalID: -1161071054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_11
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 63.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291e5d3b9337948e0a4637e1cc9538f7
+      internalID: 811479655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e1fb7ff147c4a14bd0dfd1e5eff0b1
+      internalID: 1609513554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_13
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8237170b3170649f1bb8b7a9fbb2e74a
+      internalID: 188729641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_14
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5552cfd464cee4f18944f6aeb1710940
+      internalID: -1398135668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumbnail_Elias_PlayerCharacter_Spritesheet_1024_15
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 1.5
+        width: 62.5
+        height: 62.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea0a045625e349349eb8df4351161da
+      internalID: 2088771741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_0: 135180452
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_1: 666406476
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_10: -1161071054
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_11: 811479655
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_12: 1609513554
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_13: 188729641
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_14: -1398135668
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_15: 2088771741
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_2: -894087397
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_3: 1617966297
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_4: 840944237
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_5: 1605124166
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_6: -1956576541
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_7: 456659212
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_8: -1750669359
+      thumbnail_Elias_PlayerCharacter_Spritesheet_1024_9: 318934870
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
