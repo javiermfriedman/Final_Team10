@@ -11,6 +11,8 @@ public class SpriteToggle : MonoBehaviour
     public bool isGhostMode = false; // Boolean to track ghost mode
     public AudioSource ghostSound; // Reference to the AudioSource for ghost sound
 
+    public string TagToIgnore = "Ignored";
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,4 +66,10 @@ public class SpriteToggle : MonoBehaviour
             screen.SetActive(!screen.activeSelf);
         }
     }
+
+    // void OnCollisionEnter2D (Collision2D collision){
+    //     if (collision.gameObject.tag == TagToIgnore && isGhostMode == true){
+    //             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+    //     }
+    // }
 }
