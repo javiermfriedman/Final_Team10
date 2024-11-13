@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5206247068606360191, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
+      propertyPath: sprite1
+      value: 
+      objectReference: {fileID: 135180452, guid: dc61ed5ccc4014ecaa4a76a803dbc491, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -830,7 +834,6 @@ MonoBehaviour:
   healthText: {fileID: 0}
   tokensText: {fileID: 0}
   isDefending: 0
-  mixer: {fileID: 0}
 --- !u!1 &1577531925
 GameObject:
   m_ObjectHideFlags: 0
