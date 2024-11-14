@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SpriteToggle : MonoBehaviour
 {
-    public Sprite sprite1; // First sprite for toggle
-    public Sprite sprite2; // Second sprite for toggle
+    public GameObject catNormal; // First sprite for toggle
+    public GameObject catGhost; // Second sprite for toggle
     private SpriteRenderer spriteRenderer;
     private bool isSprite1Active = true;
     public GameObject screen; // Reference to the screen GameObject
@@ -25,8 +25,11 @@ public class SpriteToggle : MonoBehaviour
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = sprite1; // Set initial sprite
+        cooldownImage = GameObject.FindWithTag("CoolDown").GetComponent<Image>();
+        catNormal.SetActive(true);
+        catGhost.SetActive(false);
+        //spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer.sprite = sprite1; // Set initial sprite
 
         if (screen != null)
         {
@@ -101,18 +104,24 @@ public class SpriteToggle : MonoBehaviour
 
     void ToggleSpriteAndScreen()
     {
+        //enter ghostmode:
         if (isSprite1Active)
         {
-            spriteRenderer.sprite = sprite2;
+            catNormal.SetActive(false);
+            catGhost.SetActive(true);
+            //spriteRenderer.sprite = sprite2;
             Debug.Log("ghost mode true");
             if (ghostSound != null)
             {
                 ghostSound.Play(); // Play ghost sound when in ghost mode
             }
         }
+        //return to normal
         else
         {
-            spriteRenderer.sprite = sprite1;
+            catNormal.SetActive(true);
+            catGhost.SetActive(false);
+            //spriteRenderer.sprite = sprite1;
             Debug.Log("ghost mode false");
             if (ghostSound != null)
             {

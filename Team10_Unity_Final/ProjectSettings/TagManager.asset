@@ -9,6 +9,7 @@ TagManager:
   - PauseMenuSlider
   - hairBall
   - bad_guy
+  - CoolDown
   layers:
   - Default
   - TransparentFX

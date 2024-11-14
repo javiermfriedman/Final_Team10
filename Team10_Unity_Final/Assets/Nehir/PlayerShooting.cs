@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public Animator anim1;
+    public Animator anim2;
     public Transform firePoint;
     public GameObject projectilePrefab;
     public float projectileSpeed = 10f;
@@ -14,12 +16,14 @@ public class PlayerShooting : MonoBehaviour
 
     void Start(){
         // idk what an animator is I guess we will have this later 
-        //animator = gameObject.GetComponentInChildren<Animator>();
-                spriteToggle = FindObjectOfType<SpriteToggle>();
+        //anim1 = gameObject.GetComponentInChildren<Animator>();
+        
+            spriteToggle = FindObjectOfType<SpriteToggle>();
               if (spriteToggle == null)
               {
                      Debug.LogWarning("SpriteToggle component not found! Ghost mode may not work as expected.");
               }
+        
     }
 
     void Update(){
@@ -27,6 +31,8 @@ public class PlayerShooting : MonoBehaviour
             // Check for left mouse button click
             if (Input.GetMouseButtonDown(0)) { // 0 is the left mouse button
                 playerFire();
+                anim1.SetTrigger("Attack");
+                anim2.SetTrigger("Attack");
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }

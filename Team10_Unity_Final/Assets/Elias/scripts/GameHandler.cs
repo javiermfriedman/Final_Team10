@@ -84,8 +84,8 @@ public class GameHandler : MonoBehaviour {
     // Return to MainMenu
     public void RestartGame() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
         playerHealth = StartPlayerHealth;  // Reset health for new games
+        SceneManager.LoadScene("MainMenu");
     }
 
     // Replay the Level where you died
