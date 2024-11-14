@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2075550424386560919, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3679387980615043409, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -461,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPlayerHealth: 100
   healthText: {fileID: 1483129601}
-  tokensText: {fileID: 0}
+  tokensText: {fileID: 1688520005}
   isDefending: 0
 --- !u!4 &586970728
 Transform:
@@ -510,10 +514,6 @@ MonoBehaviour:
   treePrefab: {fileID: 1345114773}
   spawnPoints:
   - {fileID: 357299939}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &588372146
 Transform:
   m_ObjectHideFlags: 0

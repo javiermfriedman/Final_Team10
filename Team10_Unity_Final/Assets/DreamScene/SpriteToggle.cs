@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteToggle : MonoBehaviour
@@ -10,6 +12,7 @@ public class SpriteToggle : MonoBehaviour
 
     public bool isGhostMode = false; // Boolean to track ghost mode
     public AudioSource ghostSound; // Reference to the AudioSource for ghost sound
+    private Collider2D wallCollider; // Reference to the wall's collider
 
     public string TagToIgnore = "Ignored";
 
@@ -43,6 +46,7 @@ public class SpriteToggle : MonoBehaviour
         {
             spriteRenderer.sprite = sprite2;
             isGhostMode = true; // Set to ghost mode
+            Debug.Log("ghost mode true");
             if (ghostSound != null)
             {
                 ghostSound.Play(); // Play ghost sound when in ghost mode
@@ -52,9 +56,16 @@ public class SpriteToggle : MonoBehaviour
         {
             spriteRenderer.sprite = sprite1;
             isGhostMode = false; // Set to normal mode
+            Debug.Log("ghost mode false");
             if (ghostSound != null)
             {
                 ghostSound.Stop(); // Stop ghost sound when exiting ghost mode
+            }
+
+            // Re-enable collision with the wall when exiting ghost mode
+            if (wallCollider != null)
+            {
+                Physics2D.IgnoreCollision(wallCollider, GetComponent<Collider2D>(), false);
             }
         }
 
