@@ -1024,7 +1024,8 @@ PrefabInstance:
       propertyPath: screen
       value: 
       objectReference: {fileID: 1907238786}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5206247068606360191, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 751691464966720450, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
@@ -1033,7 +1034,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 751691464966720450, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1860973024}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4689453407574241436, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 683394519}
   m_SourcePrefab: {fileID: 100100000, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
 --- !u!1 &683394514 stripped
 GameObject:
@@ -1045,6 +1049,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 751691464966720450, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
   m_PrefabInstance: {fileID: 683394513}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &683394517 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2914337178011036116, guid: decb44476769c4229a9ba3c3595f6717, type: 3}
+  m_PrefabInstance: {fileID: 683394513}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &683394519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683394514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e8c2192e94345eea2fac8ec8667c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 840944237, guid: dc61ed5ccc4014ecaa4a76a803dbc491, type: 3}
+  sprite2: {fileID: 21300000, guid: 6b4e5ba9c0f9c4bb9846e0503dd64b1e, type: 3}
+  screen: {fileID: 1907238786}
+  isGhostMode: 0
+  ghostSound: {fileID: 683394517}
+  ghostModeDuration: 5
+  cooldownDuration: 5
+  cooldownImage: {fileID: 959989361}
 --- !u!1 &719273186
 GameObject:
   m_ObjectHideFlags: 0
