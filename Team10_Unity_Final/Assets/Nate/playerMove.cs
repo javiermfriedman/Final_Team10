@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class playerMove : MonoBehaviour {
 
-      //public Animator anim;
+      public Animator anim1;
+      public Animator anim2;
       //public AudioSource WalkSFX;
-      public Rigidbody2D rb2D;
-      private bool FaceRight = true; // determine which way player is facing.
+      private Rigidbody2D rb2D;
+      private bool FaceRight = false; // determine which way player is facing.
       public static float runSpeed = 4f;
       public float startSpeed = 10f;
       public bool isAlive = true;
@@ -25,12 +26,14 @@ public class playerMove : MonoBehaviour {
                   transform.position = transform.position + hvMove * runSpeed * Time.deltaTime;
 
                   if ((Input.GetAxis("Horizontal") != 0) || (Input.GetAxis("Vertical") != 0)){
-                  //     anim.SetBool ("Walk", true);
+                        anim1.SetBool ("Walk", true);
+                        anim2.SetBool ("Walk", true);
                   //     if (!WalkSFX.isPlaying){
                   //           WalkSFX.Play();
                   //     }
                   } else {
-                  //     anim.SetBool ("Walk", false);
+                       anim1.SetBool ("Walk", false);
+                       anim2.SetBool ("Walk", false);
                   //     WalkSFX.Stop();
                  }
 
