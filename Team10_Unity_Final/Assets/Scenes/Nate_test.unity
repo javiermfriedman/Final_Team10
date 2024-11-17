@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   damping: 0.5
-  target: {fileID: 0}
+  target: {fileID: 839441729}
 --- !u!4 &357299939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3564396938879598324, guid: b2846960c77304b5bb14645cd258ff38, type: 3}
@@ -349,6 +349,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
+--- !u!4 &839441729 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 123953150624317185, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
+  m_PrefabInstance: {fileID: 839441728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1061843244
 PrefabInstance:
   m_ObjectHideFlags: 0
