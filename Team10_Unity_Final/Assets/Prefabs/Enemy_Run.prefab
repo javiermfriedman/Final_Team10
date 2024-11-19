@@ -127,6 +127,7 @@ MonoBehaviour:
   attackRange: 10
   isAttacking: 0
   knockBackForce: 0
+  spriteToggle: {fileID: 0}
 --- !u!1 &5898969357215583962
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: e8b89328c710f42bba96c5d61e237468, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
