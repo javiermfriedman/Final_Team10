@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSwitch : MonoBehaviour
+public class TotemSceneSwitch1 : MonoBehaviour
 {
     // This function is called when another 2D collider enters the trigger collider
     private void OnTriggerEnter2D(Collider2D other)
@@ -12,9 +12,8 @@ public class SceneSwitch : MonoBehaviour
         // Check if the object colliding is the player
         if (other.CompareTag("Player"))
         {
-            // Debug.Log("Hitting Portal");
             // Load the specified scene
-            SceneManager.LoadScene("Scene1");
+            SceneManager.LoadScene("Lore1");
         }
     }
 }

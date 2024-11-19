@@ -10,6 +10,7 @@ TagManager:
   - hairBall
   - bad_guy
   - CoolDown
+  - Totem1
   layers:
   - Default
   - TransparentFX
