@@ -35,8 +35,14 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void playerGetHit(int damage){
+        // Debug.Log("in playerGetHit");
+        // Debug.Log("Damage currently: " + damage);
+        // Debug.Log("Is defending: " + isDefending);
         if (!isDefending){
+            // Debug.Log("In is defending");
+            // Debug.Log("The damage passed in: " + damage);
             playerHealth -= damage;
+            // Debug.Log("The playerHealth after damage sub: " + playerHealth);
             if (playerHealth >= 0){
                 updateStatsDisplay();
             }
@@ -45,6 +51,7 @@ public class GameHandler : MonoBehaviour {
             }
         }
 
+        // What does this part mean?
         if (playerHealth > StartPlayerHealth){
             playerHealth = StartPlayerHealth;
             updateStatsDisplay();
@@ -62,7 +69,8 @@ public class GameHandler : MonoBehaviour {
         healthTextTemp.text = "HEALTH: " + playerHealth;
 
         Text tokensTextTemp = tokensText.GetComponent<Text>();
-        tokensTextTemp.text = "GOLD: " + gotTokens;
+        Debug.Log("The frag count: " + gotTokens);
+        tokensTextTemp.text = "FRAGMENTS: " + gotTokens;
     }
 
     public void playerDies(){
