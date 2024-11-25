@@ -11,6 +11,7 @@ TagManager:
   - bad_guy
   - CoolDown
   - Totem1
+  - Totem2
   layers:
   - Default
   - TransparentFX
