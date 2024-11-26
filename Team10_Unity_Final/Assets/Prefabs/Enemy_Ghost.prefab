@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7569782763650544367}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4549077220646730804
 Rigidbody2D:
@@ -78,7 +78,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -128,6 +128,7 @@ MonoBehaviour:
   attackRange: 10
   isAttacking: 0
   knockBackForce: 20
+  spriteToggle: {fileID: 0}
 --- !u!114 &2596925956993425720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +215,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.990566, g: 0.85506403, b: 0.85506403, a: 1}
   m_FlipX: 0
