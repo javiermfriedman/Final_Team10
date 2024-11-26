@@ -504,7 +504,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lore 2
+  m_Text: I wonder if the broken pieces have something to do with the unrest... And
+    it seems like these pieces are part of the same object!
 --- !u!222 &866288994
 CanvasRenderer:
   m_ObjectHideFlags: 0
