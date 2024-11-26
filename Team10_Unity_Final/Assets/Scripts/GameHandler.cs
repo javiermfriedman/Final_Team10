@@ -123,4 +123,8 @@ public class GameHandler : MonoBehaviour {
         SceneManager.LoadScene("Scene3");
     }
 
+     public void LoadLevel4() { 
+        SceneManager.LoadScene("Scene4");
+    }
+
 }
