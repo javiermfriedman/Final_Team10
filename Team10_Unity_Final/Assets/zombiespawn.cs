@@ -11,7 +11,7 @@ public class TreeSpawner : MonoBehaviour {
       private Transform spawnPoint;
 
       //Timing variables
-      private float timeToSpawn = 3f; // Set to 20 seconds
+      public float timeToSpawn = 3f; // Set to 20 seconds
       private float spawnTimer = 0f;
 
       void Start(){
