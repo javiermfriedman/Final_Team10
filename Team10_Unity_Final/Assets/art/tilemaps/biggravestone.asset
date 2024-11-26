@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: transparent image_0
+  m_Name: biggravestone
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -1429364739, guid: e98b1eab1c6634442bb17e54df20ba3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
