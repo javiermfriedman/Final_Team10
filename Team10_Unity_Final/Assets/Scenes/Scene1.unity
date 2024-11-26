@@ -221,6 +221,7 @@ MonoBehaviour:
   treePrefab: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
   spawnPoints:
   - {fileID: 739545962}
+  timeToSpawn: 7
 --- !u!4 &82700809
 Transform:
   m_ObjectHideFlags: 0
@@ -43344,6 +43345,7 @@ MonoBehaviour:
   treePrefab: {fileID: 299849951120159430, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
   spawnPoints:
   - {fileID: 264402623}
+  timeToSpawn: 3
 --- !u!4 &1297952795
 Transform:
   m_ObjectHideFlags: 0
@@ -43724,6 +43726,7 @@ MonoBehaviour:
   treePrefab: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
   spawnPoints:
   - {fileID: 36380772}
+  timeToSpawn: 3
 --- !u!4 &1604247985
 Transform:
   m_ObjectHideFlags: 0
