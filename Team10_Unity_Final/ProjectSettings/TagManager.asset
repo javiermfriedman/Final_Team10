@@ -12,6 +12,7 @@ TagManager:
   - CoolDown
   - Totem1
   - Totem2
+  - Totem3
   layers:
   - Default
   - TransparentFX
