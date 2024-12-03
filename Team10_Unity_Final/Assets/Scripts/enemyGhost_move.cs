@@ -24,12 +24,32 @@ public class enemyGhost_move : MonoBehaviour
     public SpriteToggle spriteToggle;
 
     private Coroutine damageCoroutine; // Reference to the damage coroutine
+    private SpriteRenderer spriteRenderer; // To change the color of the art's sprite
+    private Color originalColor; // Store the original color of the art's sprite
+    public GameObject artObject; // Reference to the child GameObject
 
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         scaleX = gameObject.transform.localScale.x;
+
+        if (artObject != null)
+        {
+            spriteRenderer = artObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                originalColor = spriteRenderer.color; // Save the original color
+            }
+            else
+            {
+                Debug.LogError("SpriteRenderer component not found on the art object!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Art GameObject is not assigned!");
+        }
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -58,20 +78,20 @@ public class enemyGhost_move : MonoBehaviour
 
     void Update()
     {
-            float DistToPlayer = Vector3.Distance(transform.position, target.position);
-            if ((target != null) && (DistToPlayer <= attackRange))
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        float DistToPlayer = Vector3.Distance(transform.position, target.position);
+        if ((target != null) && (DistToPlayer <= attackRange))
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-                if (target.position.x > gameObject.transform.position.x)
-                {
-                    gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-                }
-                else
-                {
-                    gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-                }
+            if (target.position.x > gameObject.transform.position.x)
+            {
+                gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
             }
+            else
+            {
+                gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
+            }
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D other)
@@ -79,6 +99,12 @@ public class enemyGhost_move : MonoBehaviour
         if (other.gameObject.tag == "hairBall")
         {
             EnemyLives -= 1;
+
+            // Trigger the flash effect
+            if (spriteRenderer != null)
+            {
+                StartCoroutine(FlashRed());
+            }
 
             if (EnemyLives == 0)
             {
@@ -125,6 +151,21 @@ public class enemyGhost_move : MonoBehaviour
             }
 
             yield return new WaitForSeconds(1f); // Apply damage every second
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        if (spriteRenderer != null)
+        {
+            // Change the color to red
+            spriteRenderer.color = Color.red;
+
+            // Wait for 0.2 seconds
+            yield return new WaitForSeconds(0.1f);
+
+            // Revert back to the original color
+            spriteRenderer.color = originalColor;
         }
     }
 
