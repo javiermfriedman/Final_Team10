@@ -9,6 +9,7 @@ public class EnemyMoveHit : MonoBehaviour {
        public float speed = 4f;
        private Transform target;
        public int damage = 10;
+       private float waitTime;
 
        // Make the enemy lives more if the levels are higher --> do this later
        public int EnemyLives = 1;
@@ -68,6 +69,7 @@ public class EnemyMoveHit : MonoBehaviour {
                      }
                      }
               }
+              
               //else { anim.SetBool("Walk", false);}
        }
 
@@ -84,6 +86,8 @@ public class EnemyMoveHit : MonoBehaviour {
               if (other.gameObject.tag == "Player") {
                      Debug.Log("hit by enemy");
                      isAttacking = true;
+
+         
                      //anim.SetBool("Attack", true);
                      if (gameHandler != null) {
                             gameHandler.playerGetHit(damage);
