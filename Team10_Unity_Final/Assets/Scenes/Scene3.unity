@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 66481703}
   - component: {fileID: 66481702}
   - component: {fileID: 66481701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders_TM
   m_TagString: Ignored
   m_Icon: {fileID: 0}

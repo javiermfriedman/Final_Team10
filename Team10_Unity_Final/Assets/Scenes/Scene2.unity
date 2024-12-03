@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 931816816}
   - component: {fileID: 931816815}
   - component: {fileID: 931816814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders_TM
   m_TagString: Ignored
   m_Icon: {fileID: 0}
