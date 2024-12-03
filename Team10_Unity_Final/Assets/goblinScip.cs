@@ -3,7 +3,7 @@ using UnityEngine;
 public class RandomMovement : MonoBehaviour
 {
     public float accelerationTime = 2f; // Time interval to change direction
-    public float maxSpeed = 2f;         // Maximum speed
+    public float maxSpeed = 10f;         // Maximum speed
     public float movementRadius = 5f;  // Radius within which the GameObject can move
     private Vector2 movement;          // Stores the movement direction
     private float timeLeft;            // Countdown timer

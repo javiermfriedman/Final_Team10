@@ -11,6 +11,8 @@ public class Urkai : MonoBehaviour {
     private float scaleX;  // Store the default scale of the Urkai
 
     private float timer;
+
+    public Transform homeBase;
     private Vector3 initialPosition;  // Store the starting position of Urkai
 
     void Start() {
@@ -39,7 +41,7 @@ public class Urkai : MonoBehaviour {
         scaleX = gameObject.transform.localScale.x;
 
         // Store the initial position of the Urkai
-        initialPosition = transform.position;
+        initialPosition = homeBase.position;
     }
 
     void Update() {
