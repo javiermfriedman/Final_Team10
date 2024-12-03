@@ -78,9 +78,10 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void playerDies(){
-        player.GetComponent<PlayerHurt>().playerDead();  //play Death animation
+        //player.GetComponent<PlayerHurt>().playerDead();  //play Death animation
         lastLevelDied = sceneName;  //allows replaying the Level where you died
-        StartCoroutine(DeathPause());
+        //StartCoroutine(DeathPause());
+        ReplayLastLevel();
     }
 
     IEnumerator DeathPause(){
