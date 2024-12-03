@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 979843033254169500}
   - component: {fileID: 4549077220646730804}
   - component: {fileID: 2626626509365634663}
-  - component: {fileID: 6720111401043807967}
+  - component: {fileID: 5831507887522019445}
   - component: {fileID: 2596925956993425720}
   m_Layer: 0
   m_Name: Enemy_Ghost
@@ -108,7 +108,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6720111401043807967
+--- !u!114 &5831507887522019445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 299849951120159430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76dc1be200e6c4130944bb6f7b5e0b5f, type: 3}
+  m_Script: {fileID: 11500000, guid: de77db2362f9a443382d65f9e223f629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   EnemyLives: 3
   attackRange: 10
   isAttacking: 0
-  knockBackForce: 20
+  knockBackForce: 0
   spriteToggle: {fileID: 0}
 --- !u!114 &2596925956993425720
 MonoBehaviour:
