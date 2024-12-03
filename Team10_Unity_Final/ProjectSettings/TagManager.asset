@@ -13,6 +13,8 @@ TagManager:
   - Totem1
   - Totem2
   - Totem3
+  - impermeable_wall
+  - urkai_zom
   layers:
   - Default
   - TransparentFX

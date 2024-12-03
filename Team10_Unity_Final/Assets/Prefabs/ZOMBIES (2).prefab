@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4009114366059058614}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4167247467988762264
 MonoBehaviour:
@@ -48,7 +48,7 @@ MonoBehaviour:
   treePrefab: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
   spawnPoints:
   - {fileID: 4009114366059058614}
-  timeToSpawn: 3
+  timeToSpawn: 1
 --- !u!1001 &492146248522263362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +104,10 @@ PrefabInstance:
     - target: {fileID: 7552682341940685174, guid: b2846960c77304b5bb14645cd258ff38, type: 3}
       propertyPath: m_Name
       value: zombieSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552682341940685174, guid: b2846960c77304b5bb14645cd258ff38, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

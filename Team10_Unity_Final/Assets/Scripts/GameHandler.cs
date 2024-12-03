@@ -33,29 +33,33 @@ public class GameHandler : MonoBehaviour {
         gotTokens += newTokens;
         updateStatsDisplay();
     }
+    public void testPrint(){
+        Debug.Log("javiCheck");
+    }
 
     public void playerGetHit(int damage){
         // Debug.Log("in playerGetHit");
         // Debug.Log("Damage currently: " + damage);
         // Debug.Log("Is defending: " + isDefending);
-        if (!isDefending){
+        
             // Debug.Log("In is defending");
             // Debug.Log("The damage passed in: " + damage);
-            playerHealth -= damage;
-            // Debug.Log("The playerHealth after damage sub: " + playerHealth);
-            if (playerHealth >= 0){
-                updateStatsDisplay();
-            }
-            if (damage > 0){
-                player.GetComponent<PlayerHurt>().playerHit();  //play GetHit animation
-            }
-        }
+        playerHealth -= damage;
+        Debug.Log("player health at " + playerHealth);
+        // Debug.Log("The playerHealth after damage sub: " + playerHealth);
+        
+        updateStatsDisplay();
+        
+        // if (damage > 0){
+        //     player.GetComponent<PlayerHurt>().playerHit();  //play GetHit animation
+        // }
+    
 
-        // What does this part mean?
-        if (playerHealth > StartPlayerHealth){
-            playerHealth = StartPlayerHealth;
-            updateStatsDisplay();
-        }
+        // // What does this part mean?
+        // if (playerHealth > StartPlayerHealth){
+        //     playerHealth = StartPlayerHealth;
+        //     updateStatsDisplay();
+        // }
 
         if (playerHealth <= 0){
             playerHealth = 0;
