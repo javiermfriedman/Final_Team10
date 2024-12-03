@@ -14,7 +14,7 @@ public class SceneSwitch : MonoBehaviour
         {
             // Debug.Log("Hitting Portal");
             // Load the specified scene
-            SceneManager.LoadScene("Scene1");
+            SceneManager.LoadScene("Lore0");
         }
     }
 }
