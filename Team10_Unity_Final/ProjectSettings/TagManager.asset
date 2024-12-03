@@ -15,6 +15,7 @@ TagManager:
   - Totem3
   - impermeable_wall
   - urkai_zom
+  - spawner
   layers:
   - Default
   - TransparentFX
