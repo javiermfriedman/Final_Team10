@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lore3.unity
     guid: e94c2b0b1ef5d4364a1a4a9538f396b3
   - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: b3148849470164f82af1867e63b86935
+  - enabled: 1
     path: Assets/Scenes/Scene4.unity
     guid: a6acd7651350a4920a85588d1b0d1a57
   - enabled: 1
