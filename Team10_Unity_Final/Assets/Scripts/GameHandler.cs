@@ -119,6 +119,10 @@ public class GameHandler : MonoBehaviour {
         SceneManager.LoadScene("Credits");
     }
 
+    public void LoadLevel1() { 
+        SceneManager.LoadScene("Scene1");
+    }
+
     public void LoadLevel2() { 
         SceneManager.LoadScene("Scene2");
     }
@@ -127,7 +131,7 @@ public class GameHandler : MonoBehaviour {
         SceneManager.LoadScene("Scene3");
     }
 
-     public void LoadLevel4() { 
+    public void LoadLevel4() { 
         SceneManager.LoadScene("Scene4");
     }
 
