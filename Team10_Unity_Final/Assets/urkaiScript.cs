@@ -10,8 +10,7 @@ public class Urkai : MonoBehaviour {
     private SpriteToggle spriteToggle;  // Reference to the SpriteToggle component
     private float scaleX;  // Store the default scale of the Urkai
 
-    private float timer;
-
+    public float offset;  // Offset for circular motion (in radians)
     public Transform homeBase;
     private Vector3 initialPosition;  // Store the starting position of Urkai
 
@@ -51,18 +50,21 @@ public class Urkai : MonoBehaviour {
         if (distToPlayer < attackRange) {
             MoveTowardPlayer();
         } else {
-            naturalState();
+            naturalState(offset);  // Pass the offset to the naturalState method
         }
+
+        // Keep the object upright
+        KeepUpright();
     }
 
-    void naturalState() {
+    void naturalState(float offset) {
         float speed = 0.5f;  // Speed of movement
-        float width = 3f;  // Width of the rectangle (horizontal movement)
-        float height = 2f; // Height of the rectangle (vertical movement)
+        float width = 4f;    // Width of the circle (horizontal movement)
+        float height = 4f;   // Height of the circle (vertical movement)
         
-        // Calculate the movement based on sine wave for smooth oscillation
-        float x = Mathf.Sin(Time.time * speed) * width;
-        float y = Mathf.Cos(Time.time * speed) * height;
+        // Add the offset to Time.time * speed
+        float x = Mathf.Sin(Time.time * speed + offset) * width;
+        float y = Mathf.Cos(Time.time * speed + offset) * height;
 
         // Update the position relative to the initial position
         transform.position = new Vector3(initialPosition.x + x, initialPosition.y + y, transform.position.z);
@@ -75,6 +77,11 @@ public class Urkai : MonoBehaviour {
             // Move the Urkai toward the player
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+    }
+
+    void KeepUpright() {
+        // Lock the Z-rotation to keep the object upright
+        transform.rotation = Quaternion.identity; // Resets rotation to (0, 0, 0)
     }
 
     public void OnCollisionEnter2D(Collision2D other) {

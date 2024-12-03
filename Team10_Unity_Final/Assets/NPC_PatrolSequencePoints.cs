@@ -6,9 +6,11 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
        // private Animator anim;
        public float speed = 10f;
        private float waitTime;
-       public float startWaitTime = 2f;
-    private float attackRange = 5f;
-    
+       private float startWaitTime = 0.5f;
+        private float attackRange = 5f;
+
+    private int health = 10; 
+
        public Transform[] moveSpots;
        public int startSpot = 0;
        public bool moveForward = true;
@@ -48,13 +50,19 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
             float distToPlayer = Vector3.Distance(transform.position, target.position);
 
             // Check if the player is within the attack range
-            if (distToPlayer < attackRange) {
+            if (distToPlayer < attackRange || health < 8) {
                 MoveTowardPlayer();
             } else {
                 patrol();
             }
+            KeepUpright();
               
        }
+
+    void KeepUpright() {
+    // Reset rotation to (0, 0, 0)
+        transform.rotation = Quaternion.identity;
+    }
 
     void MoveTowardPlayer() {
         if (target != null) {
@@ -102,5 +110,33 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
               theScale.x *= -1;
               transform.localScale = theScale;
        }
+
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "hairBall") {
+            Debug.Log("Hit by hairball");
+            health -= 1;
+            
+            if(health == 0){
+                Destroy(gameObject);
+            }
+            
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D other) {
+        float damageCooldown = 1f;
+        float nextDamageTime = 1f;
+        if (other.gameObject.CompareTag("Player")) {
+            if (Time.time >= nextDamageTime) {
+                if (gameHandler != null) {
+                    gameHandler.playerGetHit(30);  // Apply damage
+                } else {
+                    Debug.LogError("GameHandler is not assigned!");
+                }
+                nextDamageTime = Time.time + damageCooldown;
+            }
+        }
+    }
 
 }

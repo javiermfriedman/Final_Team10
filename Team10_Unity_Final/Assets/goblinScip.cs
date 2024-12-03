@@ -19,6 +19,9 @@ public class RandomMovement : MonoBehaviour
         }
         startingPosition = transform.position; // Store the starting position
         timeLeft = accelerationTime;          // Initialize the timer
+
+        // Initialize movement with a random direction
+        movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }
 
     void Update()
@@ -36,20 +39,25 @@ public class RandomMovement : MonoBehaviour
     {
         if (rb != null)
         {
-            // Calculate the next position
-            Vector2 nextPosition = rb.position + movement * maxSpeed * Time.fixedDeltaTime;
+            // Move the GameObject
+            rb.velocity = movement * maxSpeed;
 
-            // Check if the next position is within the radius
-            if (Vector2.Distance(startingPosition, nextPosition) <= movementRadius)
+            // Keep it within the movement radius
+            if (Vector2.Distance(startingPosition, rb.position) > movementRadius)
             {
-                rb.AddForce(movement * maxSpeed); // Apply force if within bounds
-            }
-            else
-            {
-                // Reflect the direction back towards the starting position
+                // Reflect the direction back towards the center
                 movement = (startingPosition - rb.position).normalized;
-                rb.AddForce(movement * maxSpeed); // Adjust force to keep it inside the radius
             }
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Reflect the movement vector based on the collision normal
+        Vector2 normal = collision.contacts[0].normal;
+        movement = Vector2.Reflect(movement, normal).normalized;
+
+        // Apply the reflected direction
+        rb.velocity = movement * maxSpeed;
     }
 }
