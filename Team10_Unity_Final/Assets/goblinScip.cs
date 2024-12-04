@@ -8,10 +8,18 @@ public class RandomMovement : MonoBehaviour
     private Vector2 movement;          // Stores the movement direction
     private float timeLeft;            // Countdown timer
     private Rigidbody2D rb;            // Reference to the Rigidbody2D component
-    private Vector2 startingPosition;  // Starting position of the GameObject
+    private Vector2 startingPosition; 
+    
+    private GameHandler gameHandler;  // Starting position of the GameObject
 
     void Start()
     {
+
+        GameObject gameHandlerObject = GameObject.FindGameObjectWithTag("GameHandler");
+            if (gameHandlerObject != null) {
+                gameHandler = gameHandlerObject.GetComponent<GameHandler>();
+        }
+
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
         if (rb == null)
         {
@@ -53,6 +61,15 @@ public class RandomMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "hairBall") {
+            Debug.Log("Hit by hairball");
+            Destroy(gameObject);
+            
+        }
+
+        if (collision.gameObject.tag == "Player") {
+            gameHandler.playerGetHit(5);
+        }
         // Reflect the movement vector based on the collision normal
         Vector2 normal = collision.contacts[0].normal;
         movement = Vector2.Reflect(movement, normal).normalized;
