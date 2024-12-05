@@ -16,6 +16,7 @@ TagManager:
   - impermeable_wall
   - urkai_zom
   - spawner
+  - witch_spawner
   layers:
   - Default
   - TransparentFX

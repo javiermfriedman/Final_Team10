@@ -10,26 +10,16 @@ public class witchSpawner : MonoBehaviour
     public GameObject zombie;
 
 
+
     void Start()
     {
-        StartCoroutine(spawnClock());
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void spawn_enemy(){
 
-    IEnumerator spawnClock() {
-        while(true){
-            int num = Random.Range(0, treePrefab.Length);
-            Debug.Log(num);
-            Instantiate(zombie, treePrefab[num].transform);
-            yield return new WaitForSeconds(3);
-
-        }
-       
+            Instantiate(zombie, treePrefab[0].transform);
+            Instantiate(zombie, treePrefab[1].transform);
     }
 
 
