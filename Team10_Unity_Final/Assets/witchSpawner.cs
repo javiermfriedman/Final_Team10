@@ -10,12 +10,6 @@ public class witchSpawner : MonoBehaviour
     public GameObject zombie;
 
 
-
-    void Start()
-    {
-
-    }
-
     public void spawn_enemy(){
 
             Instantiate(zombie, treePrefab[0].transform);

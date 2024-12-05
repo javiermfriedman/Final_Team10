@@ -13,9 +13,16 @@ public class playerMove : MonoBehaviour {
       public float startSpeed = 10f;
       public bool isAlive = true;
 
+      private GameHandler gameHandler;
+
       void Start(){
            //anim = gameObject.GetComponentInChildren<Animator>();
            rb2D = transform.GetComponent<Rigidbody2D>();
+
+                   if (gameHandler == null)
+                  {
+                        gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+                  }
       }
 
       void Update(){
@@ -43,6 +50,14 @@ public class playerMove : MonoBehaviour {
                   }
             }
       }
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "witch_proj")
+        {
+            gameHandler.playerGetHit(10);
+        }
+
+    }
 
       private void playerTurn(){
             // NOTE: Switch player facing label

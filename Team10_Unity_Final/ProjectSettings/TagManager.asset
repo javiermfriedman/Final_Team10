@@ -17,6 +17,8 @@ TagManager:
   - urkai_zom
   - spawner
   - witch_spawner
+  - witch_proj
+  - bossWitch
   layers:
   - Default
   - TransparentFX
