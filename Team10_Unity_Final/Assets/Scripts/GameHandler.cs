@@ -70,11 +70,11 @@ public class GameHandler : MonoBehaviour {
 
     public void updateStatsDisplay(){
         Text healthTextTemp = healthText.GetComponent<Text>();
-        healthTextTemp.text = "HEALTH: " + playerHealth;
+        healthTextTemp.text = "Health: " + playerHealth;
 
         Text tokensTextTemp = tokensText.GetComponent<Text>();
         Debug.Log("The frag count: " + gotTokens);
-        tokensTextTemp.text = "FRAGMENTS: " + gotTokens;
+        tokensTextTemp.text = "Fragments: " + gotTokens;
     }
 
     public void playerDies(){
