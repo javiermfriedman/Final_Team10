@@ -202,14 +202,14 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 1827288699}
     - targetCorrespondingSourceObject: {fileID: 4798568323431831429, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1570504731}
-    - targetCorrespondingSourceObject: {fileID: 4798568323431831429, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 866288992}
     - targetCorrespondingSourceObject: {fileID: 4798568323431831429, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 2078795516}
+    - targetCorrespondingSourceObject: {fileID: 4798568323431831429, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1570504731}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
 --- !u!1 &866288991
@@ -247,8 +247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -17}
-  m_SizeDelta: {x: 1000, y: 300}
+  m_AnchoredPosition: {x: 0, y: -97}
+  m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &866288993
 MonoBehaviour:
@@ -271,12 +271,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 1dee1f820d34349ddb1a223836970d27, type: 3}
+    m_FontSize: 55
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 50
+    m_MaxSize: 55
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4018402953030999562, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -263
+      value: -282
       objectReference: {fileID: 0}
     - target: {fileID: 4018402953030999562, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189856913780829626, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
       propertyPath: m_Text
-      value: Continue
+      value: CONTINUE
       objectReference: {fileID: 0}
     - target: {fileID: 6985017230470761986, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
       propertyPath: m_Name
