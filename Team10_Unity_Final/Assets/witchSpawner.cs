@@ -11,9 +11,7 @@ public class witchSpawner : MonoBehaviour
 
 
     public void spawn_enemy(){
-
             Instantiate(zombie, treePrefab[0].transform);
-            Instantiate(zombie, treePrefab[1].transform);
     }
 
 
