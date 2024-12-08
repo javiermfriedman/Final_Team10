@@ -37,6 +37,7 @@ public class EnemyProjectile : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
+
     public void OnCollisionEnter2D(Collision2D other){
 
 

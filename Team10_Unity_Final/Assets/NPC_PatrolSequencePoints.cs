@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class NPC_PatrolSequencePoints : MonoBehaviour {
        // private Animator anim;
-       public float speed = 10f;
+       public float speed = 2f;
        private float waitTime;
-       private float startWaitTime = 0.5f;
-        private float attackRange = 5f;
+       public float startWaitTime = 1f;
 
-    private int health = 10; 
+        public float initAttackRange = 5f;
+        public float postAttackRange = 10f;
+
+
+    private bool attack;
+
+        public int startHealth = 10; 
+        private int currHealth = 10;
 
        public Transform[] moveSpots;
        public int startSpot = 0;
@@ -24,19 +30,21 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
         private GameHandler gameHandler;  // Reference to GameHandler
         private SpriteToggle spriteToggle;
 
+        [SerializeField] floatingHealthBar healthBar;
+
        void Start(){
               waitTime = startWaitTime;
               nextSpot = startSpot;
 
+              currHealth = startHealth;
+
             spriteToggle = FindObjectOfType<SpriteToggle>();
-            if (spriteToggle == null) {
-                Debug.LogWarning("SpriteToggle component not found! Ghost mode may not work as expected.");
-            }
 
-            if (GameObject.FindGameObjectWithTag("Player") != null) {
-                target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            }
 
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            
+
+            healthBar = GetComponentInChildren<floatingHealthBar>();
 
             GameObject gameHandlerObject = GameObject.FindGameObjectWithTag("GameHandler");
             if (gameHandlerObject != null) {
@@ -47,11 +55,21 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
 
 
        void Update(){
+
             float distToPlayer = Vector3.Distance(transform.position, target.position);
+            
+            if (distToPlayer < initAttackRange) {
+                attack = true;
+            } else if (distToPlayer < postAttackRange && currHealth < startHealth){
+                attack = true;
+            } else {
+                attack = false;
+            }
 
             // Check if the player is within the attack range
-            if (distToPlayer < attackRange || health < 8) {
-                MoveTowardPlayer();
+            if (attack && !spriteToggle.isGhostMode) {
+                    MoveTowardPlayer();
+                
             } else {
                 patrol();
             }
@@ -66,7 +84,6 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
 
     void MoveTowardPlayer() {
         if (target != null) {
-            float speed = 3f;
 
             // Move the Urkai toward the player
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -115,9 +132,10 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "hairBall") {
             Debug.Log("Hit by hairball");
-            health -= 1;
+            currHealth -= 1;
+            healthBar.UpdateHealth(currHealth, startHealth);
             
-            if(health == 0){
+            if(currHealth == 0){
                 Destroy(gameObject);
             }
             

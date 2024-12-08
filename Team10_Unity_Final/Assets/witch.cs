@@ -6,17 +6,27 @@ public class EnemyMoveShoot : MonoBehaviour {
 
       //public Animator anim;
        public float speed = 2f;
-       public float stoppingDistance = 4f; // when enemy stops moving towards player
-       public float retreatDistance = 3f; // when enemy moves away from approaching player
+       public float stoppingDistance = 5f; // when enemy stops moving towards player
+       public float retreatDistance = 4f; // when enemy moves away from approaching player
        private float timeBtwShots;
        public float startTimeBtwShots = 2;
        public GameObject projectile;
+
+       private bool spawnGiant = true;
+
+       public GameObject zombie;
+       public GameObject giant;
+
+       private bool spawn_ghost;
 
        private Rigidbody2D rb;
        private Transform player;
        private Vector2 PlayerVect;
 
-       public int EnemyLives = 30;
+       [SerializeField] floatingHealthBar healthBar;
+
+       public int enemyMaxHealth = 30;
+       public int enemyCurrHealth = 30;
        private Renderer rend;
        private GameHandler gameHandler;
 
@@ -24,10 +34,14 @@ public class EnemyMoveShoot : MonoBehaviour {
        public bool isAttacking = false;
        private float scaleX;
 
+       public GameObject ghost;
+
        //
         private bool canspawn;
         public float spawn_cooldown;
         public witchSpawner spawner;
+
+       private SpriteToggle spriteToggle;
 
        void Start () {
               Physics2D.queriesStartInColliders = false;
@@ -39,66 +53,102 @@ public class EnemyMoveShoot : MonoBehaviour {
 
               timeBtwShots = startTimeBtwShots;
 
+              enemyCurrHealth = enemyMaxHealth;
+
               rend = GetComponentInChildren<Renderer> ();
+              spriteToggle = FindObjectOfType<SpriteToggle>();
+              healthBar = GetComponentInChildren<floatingHealthBar>();
               //anim = GetComponentInChildren<Animator> ();
+
 
               //if (GameObject.FindWithTag ("GameHandler") != null) {
               // gameHander = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
               //}
-
+              spawn_ghost = true;
               canspawn = true;
               rb.constraints = RigidbodyConstraints2D.FreezeRotation;
        }
 
        void Update () {
+
+ 
               float DistToPlayer = Vector3.Distance(transform.position, player.position);
               if (DistToPlayer <= attackRange) {
-
-                     // approach player
-                     if (Vector2.Distance (transform.position, player.position) > stoppingDistance) {
-                            transform.position = Vector2.MoveTowards (transform.position, player.position, speed * Time.deltaTime);
-                            if (isAttacking == false) {
-                                   //anim.SetBool("Walk", true);
-                            }
-                            //Vector2 lookDir = PlayerVect - rb.position;
-                            //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg -90f;
-                            //rb.rotation = angle;
-                     } else if (Vector2.Distance (transform.position, player.position) < stoppingDistance && Vector2.Distance (transform.position, player.position) > retreatDistance) {
-                            // stop moving
-                            transform.position = this.transform.position;
-                            //anim.SetBool("Walk", false);
-                     }  else if (Vector2.Distance (transform.position, player.position) < retreatDistance) {
-                             // retreat from player
-                            transform.position = Vector2.MoveTowards (transform.position, player.position, -speed * Time.deltaTime);
-                            if (isAttacking == false) {
-                                   //anim.SetBool("Walk", true);
-                            }
+                     
+                     if (enemyCurrHealth == 3) {
+                            if(spawnGiant){
+                                   Instantiate(giant, gameObject.transform);
+                                   spawnGiant = false;
+                            } 
+                            
                      }
-
-                    //spawn in zomvies if too close
-                    if (DistToPlayer < 7f && canspawn)
-                    {
-                        spawner.spawn_enemy();
-                        canspawn = false; // Prevent further spawns until the wait is complete
-                        StartCoroutine(WaitAfterSpawn());
-                    }
-
-                     //Flip enemy to face player direction. Wrong direction? Swap the * -1.
-                     if (player.position.x > gameObject.transform.position.x){
-                            gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-                    } else {
-                             gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-                     }
-
-                     //Timer for shooting projectiles
-                     if (timeBtwShots <= 0) {
-                            isAttacking = true;
-                            //anim.SetTrigger("Attack");
-                            Instantiate (projectile, transform.position, Quaternion.identity);
-                            timeBtwShots = startTimeBtwShots;
+                     //what happens when cat goes into ghost mode
+                     if (spriteToggle.isGhostMode) {
+                            if( spawn_ghost ) {
+                                   summonGhosts();
+                                   spawn_ghost = false;
+                            }
                      } else {
-                            timeBtwShots -= Time.deltaTime;
-                            isAttacking = false;
+                            spawn_ghost = true;
+                                                 //spawn in zomvies if too close
+                            if (DistToPlayer < 7f && canspawn)
+                            {
+                                   summonzom();
+                                   canspawn = false; // Prevent further spawns until the wait is complete
+                                   StartCoroutine(WaitAfterSpawn());
+                            }
+
+                            movment();
+                            shoot();
+
+                     }
+
+              }
+
+
+       }
+
+       void summonGhosts()
+       {
+              Instantiate(ghost, gameObject.transform);
+       }
+
+       void summonzom()
+       {
+              Instantiate(zombie, gameObject.transform);
+       }
+
+
+       private void shoot()
+       {
+              //Timer for shooting projectiles
+              if (timeBtwShots <= 0) {
+                     isAttacking = true;
+                     //anim.SetTrigger("Attack");
+                     Instantiate (projectile, transform.position, Quaternion.identity);
+                     timeBtwShots = startTimeBtwShots;
+              } else {
+                     timeBtwShots -= Time.deltaTime;
+                     isAttacking = false;
+              }
+       }
+
+
+
+       private void movment(){
+                                   // approach player
+              if (Vector2.Distance (transform.position, player.position) > stoppingDistance) {
+                     transform.position = Vector2.MoveTowards (transform.position, player.position, speed * Time.deltaTime);
+
+              } else if (Vector2.Distance (transform.position, player.position) < stoppingDistance && Vector2.Distance (transform.position, player.position) > retreatDistance) {
+                     // stop moving
+                     transform.position = this.transform.position;
+                     //anim.SetBool("Walk", false);
+              }  else if (Vector2.Distance (transform.position, player.position) < retreatDistance) {
+                            // retreat from player
+                     transform.position = Vector2.MoveTowards (transform.position, player.position, -speed * Time.deltaTime);
+                     if (isAttacking == false) {
+                            //anim.SetBool("Walk", true);
                      }
               }
        }
@@ -111,9 +161,10 @@ public class EnemyMoveShoot : MonoBehaviour {
 
        void OnCollisionEnter2D(Collision2D collision){
               if (collision.gameObject.tag == "hairBall") {
-                    EnemyLives -= 1;
+                    enemyCurrHealth -= 1;
+                    healthBar.UpdateHealth(enemyCurrHealth, enemyMaxHealth);
               }
-                if (EnemyLives <= 0)
+                if (enemyCurrHealth <= 0)
                 {
                     Destroy(gameObject);
                 }
