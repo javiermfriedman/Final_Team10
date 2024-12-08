@@ -75,7 +75,7 @@ public class EnemyMoveShoot : MonoBehaviour {
               float DistToPlayer = Vector3.Distance(transform.position, player.position);
               if (DistToPlayer <= attackRange) {
                      
-                     if (enemyCurrHealth == 3) {
+                     if (enemyCurrHealth == 4) {
                             if(spawnGiant){
                                    Instantiate(giant, gameObject.transform);
                                    spawnGiant = false;
