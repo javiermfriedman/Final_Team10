@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 3989408906333354289}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7313598699417256451
 Rigidbody2D:
@@ -126,7 +126,7 @@ MonoBehaviour:
   EnemyLives: 1
   attackRange: 10
   isAttacking: 0
-  knockBackForce: 100
+  knockBackForce: 0
   spriteToggle: {fileID: 0}
 --- !u!1 &5898969357215583962
 GameObject:
