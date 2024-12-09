@@ -120,6 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fdd622196f248c29a7c3ab0e8e4799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  startWaitTime: 1
+  initAttackRange: 5
+  postAttackRange: 10
   startHealth: 10
   moveSpots:
   - {fileID: 0}
@@ -320,6 +324,14 @@ PrefabInstance:
     - target: {fileID: 5845277046624092949, guid: 7e9e2cadc492a45539ed7047e6fbeed6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750315636574248442, guid: 7e9e2cadc492a45539ed7047e6fbeed6, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8844733210997380455, guid: 7e9e2cadc492a45539ed7047e6fbeed6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
