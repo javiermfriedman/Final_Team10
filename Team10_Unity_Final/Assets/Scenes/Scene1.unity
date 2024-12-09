@@ -70144,7 +70144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7736884300607842895, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -95578,9 +95578,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174016983243035420, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      propertyPath: m_Text
+      value: Scene 1 text
+      objectReference: {fileID: 0}
     - target: {fileID: 4886916824032847139, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
       propertyPath: m_Name
       value: GAMEHANDLER_CANVAS (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182328451199210887, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8311196727565171663, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
       propertyPath: m_RootOrder
