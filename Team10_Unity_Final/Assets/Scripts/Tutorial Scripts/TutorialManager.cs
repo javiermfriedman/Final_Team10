@@ -23,7 +23,7 @@ public class TutorialManager : MonoBehaviour
         {
             tutorialMessages.Enqueue("Where am I? What is this place? I must find out!\n(R to continue)");
             tutorialMessages.Enqueue("WASD or arrow keys to move...\n(R to continue)");
-            tutorialMessages.Enqueue("Looks like I'm in a graveyard!\n(R to continue)");
+            tutorialMessages.Enqueue("Looks like I'm in a graveyard! I wonder where this path leads... \n(R to continue)");
             tutorialMessages.Enqueue("I need to continue exploring this space to see what is in store for me...\n(R to finish)");
         }
 

@@ -14,9 +14,6 @@ public class EnemyMoveShoot : MonoBehaviour {
 
        private bool spawnGiant = true;
 
-       public GameObject zombie;
-       public GameObject giant;
-
        private bool spawn_ghost;
 
        private Rigidbody2D rb;
@@ -34,40 +31,43 @@ public class EnemyMoveShoot : MonoBehaviour {
        public bool isAttacking = false;
        private float scaleX;
 
-       public GameObject ghost;
+   
 
-       //
-        private bool canspawn;
-        public float spawn_cooldown;
-        public witchSpawner spawner;
+       private bool canspawn;
+       public float spawn_cooldown;
+
+       public witch_spawn spawner;
 
        private SpriteToggle spriteToggle;
 
-       void Start () {
+
+       void Start(){
               Physics2D.queriesStartInColliders = false;
               scaleX = gameObject.transform.localScale.x;
 
               rb = GetComponent<Rigidbody2D> ();
               player = GameObject.FindGameObjectWithTag("Player").transform;
               PlayerVect = player.transform.position;
+              // Ensure spawnerPrefab is properly assigned in the Inspector or declared elsewhere
+              GameObject witch_spawner = GameObject.FindGameObjectWithTag("witchSpawn");
+              if (witch_spawner != null)
+              {
+                     spawner = witch_spawner.GetComponent<witch_spawn>();
+              }
 
               timeBtwShots = startTimeBtwShots;
-
               enemyCurrHealth = enemyMaxHealth;
+
 
               rend = GetComponentInChildren<Renderer> ();
               spriteToggle = FindObjectOfType<SpriteToggle>();
               healthBar = GetComponentInChildren<floatingHealthBar>();
-              //anim = GetComponentInChildren<Animator> ();
 
-
-              //if (GameObject.FindWithTag ("GameHandler") != null) {
-              // gameHander = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
-              //}
               spawn_ghost = true;
               canspawn = true;
               rb.constraints = RigidbodyConstraints2D.FreezeRotation;
        }
+
 
        void Update () {
 
@@ -77,15 +77,17 @@ public class EnemyMoveShoot : MonoBehaviour {
                      
                      if (enemyCurrHealth == 4) {
                             if(spawnGiant){
-                                   Instantiate(giant, gameObject.transform);
+                                   spawner.Spawn_giant();
                                    spawnGiant = false;
+
                             } 
                             
                      }
                      //what happens when cat goes into ghost mode
                      if (spriteToggle.isGhostMode) {
-                            if( spawn_ghost ) {
-                                   summonGhosts();
+                            if( spawn_ghost && enemyCurrHealth < enemyMaxHealth){
+
+                                   spawner.Spawn_bats();
                                    spawn_ghost = false;
                             }
                      } else {
@@ -93,7 +95,7 @@ public class EnemyMoveShoot : MonoBehaviour {
                                                  //spawn in zomvies if too close
                             if (DistToPlayer < 7f && canspawn)
                             {
-                                   summonzom();
+                                   spawner.Spawn_zombie();
                                    canspawn = false; // Prevent further spawns until the wait is complete
                                    StartCoroutine(WaitAfterSpawn());
                             }
@@ -106,16 +108,6 @@ public class EnemyMoveShoot : MonoBehaviour {
               }
 
 
-       }
-
-       void summonGhosts()
-       {
-              Instantiate(ghost, gameObject.transform);
-       }
-
-       void summonzom()
-       {
-              Instantiate(zombie, gameObject.transform);
        }
 
 
@@ -132,8 +124,6 @@ public class EnemyMoveShoot : MonoBehaviour {
                      isAttacking = false;
               }
        }
-
-
 
        private void movment(){
                                    // approach player

@@ -19,6 +19,7 @@ TagManager:
   - witch_spawner
   - witch_proj
   - bossWitch
+  - witchSpawn
   layers:
   - Default
   - TransparentFX
