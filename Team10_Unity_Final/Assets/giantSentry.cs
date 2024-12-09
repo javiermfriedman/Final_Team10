@@ -7,8 +7,8 @@ public class giantSentry : MonoBehaviour
     private float speed = 2f;
     private float attackRange = 20f;
 
-    private int startHealth = 10; 
-    private int currHealth = 10;
+    private int startHealth = 15; 
+    private int currHealth = 14;
 
     private bool attack;
     private Transform target;
@@ -23,7 +23,6 @@ public class giantSentry : MonoBehaviour
     void Start()
     {
         attack = false;
-        currHealth = startHealth;
 
         spriteToggle = FindObjectOfType<SpriteToggle>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
