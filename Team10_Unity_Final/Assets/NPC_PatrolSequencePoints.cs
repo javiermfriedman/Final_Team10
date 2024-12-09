@@ -3,142 +3,136 @@ using System.Collections;
 using UnityEngine;
 
 public class NPC_PatrolSequencePoints : MonoBehaviour {
-       // private Animator anim;
-       public float speed = 2f;
-       private float waitTime;
-       public float startWaitTime = 1f;
+    public float speed = 2f;
+    private float waitTime;
+    public float startWaitTime = 1f;
 
-        public float initAttackRange = 5f;
-        public float postAttackRange = 10f;
+    public float initAttackRange = 5f;
+    public float postAttackRange = 10f;
 
+    public int startHealth = 10; 
+    private int currHealth = 10;
 
-    private bool attack;
+    public Transform[] moveSpots;
+    public int startSpot = 0;
+    public bool moveForward = true;
 
-        public int startHealth = 10; 
-        private int currHealth = 10;
+    public bool faceRight = false;
 
-       public Transform[] moveSpots;
-       public int startSpot = 0;
-       public bool moveForward = true;
+    public Transform target;  // Reference to the player's transform
+    private GameHandler gameHandler;  // Reference to GameHandler
+    private SpriteToggle spriteToggle;
 
-       // Turning
-       private int nextSpot;
-       private int previousSpot;
-       public bool faceRight = false;
+    [SerializeField] private floatingHealthBar healthBar;
 
-        public Transform target;  // Reference to the player's transform
-        private GameHandler gameHandler;  // Reference to GameHandler
-        private SpriteToggle spriteToggle;
+    private Vector3 lastKnownPlayerPosition; // Logs player's last transform before ghost mode
+    private bool isChasingGhost;
 
-        [SerializeField] floatingHealthBar healthBar;
+    private int nextSpot; // Current target spot
+    private int previousSpot; // Previous spot for direction handling
 
-       void Start(){
-              waitTime = startWaitTime;
-              nextSpot = startSpot;
+    void Start() {
+        waitTime = startWaitTime;
+        currHealth = startHealth;
 
-              currHealth = startHealth;
+        spriteToggle = FindObjectOfType<SpriteToggle>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        healthBar = GetComponentInChildren<floatingHealthBar>();
 
-            spriteToggle = FindObjectOfType<SpriteToggle>();
+        GameObject gameHandlerObject = GameObject.FindGameObjectWithTag("GameHandler");
+        if (gameHandlerObject != null) {
+            gameHandler = gameHandlerObject.GetComponent<GameHandler>();
+        }
 
+        // Initialize patrol variables
+        nextSpot = startSpot;
+        previousSpot = startSpot;
+    }
 
-            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            
+    void Update() {
+        float distToPlayer = Vector3.Distance(transform.position, target.position);
 
-            healthBar = GetComponentInChildren<floatingHealthBar>();
+        bool inAttackRange = distToPlayer < initAttackRange || 
+                             (distToPlayer < postAttackRange && currHealth < startHealth);
 
-            GameObject gameHandlerObject = GameObject.FindGameObjectWithTag("GameHandler");
-            if (gameHandlerObject != null) {
-                gameHandler = gameHandlerObject.GetComponent<GameHandler>();
-            }
-       }
-
-
-
-       void Update(){
-
-            float distToPlayer = Vector3.Distance(transform.position, target.position);
-            
-            if (distToPlayer < initAttackRange) {
-                attack = true;
-            } else if (distToPlayer < postAttackRange && currHealth < startHealth){
-                attack = true;
+        if (inAttackRange) {
+            if (spriteToggle.isGhostMode) {
+                if (!isChasingGhost) {
+                    lastKnownPlayerPosition = target.position; // Log position once
+                    isChasingGhost = true;
+                }
+                MoveTowardLastKnownPosition();
             } else {
-                attack = false;
+                isChasingGhost = false;
+                MoveTowardPlayer();
             }
-
-            // Check if the player is within the attack range
-            if (attack && !spriteToggle.isGhostMode) {
-                    MoveTowardPlayer();
-                
-            } else {
-                patrol();
-            }
-            KeepUpright();
-              
-       }
+        } else {
+            patrol();
+        }
+        
+        KeepUpright();
+    }
 
     void KeepUpright() {
-    // Reset rotation to (0, 0, 0)
         transform.rotation = Quaternion.identity;
     }
 
     void MoveTowardPlayer() {
         if (target != null) {
-
-            // Move the Urkai toward the player
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
 
-     void patrol(){
+    void MoveTowardLastKnownPosition() {
+        transform.position = Vector2.MoveTowards(transform.position, lastKnownPlayerPosition, speed * Time.deltaTime);
+
+        // Stop chasing ghost if the NPC reaches the last known position
+        if (Vector3.Distance(transform.position, lastKnownPlayerPosition) < 0.1f) {
+            isChasingGhost = false;
+        }
+    }
+
+    void patrol() {
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[nextSpot].position, speed * Time.deltaTime);
 
-              if (Vector2.Distance(transform.position, moveSpots[nextSpot].position) < 0.2f){
-                     if (waitTime <= 0){
-                            if (moveForward == true){ previousSpot = nextSpot; nextSpot += 1; }
-                            else if (moveForward == false){ previousSpot = nextSpot; nextSpot -= 1; }
-                            waitTime = startWaitTime;
-                     } else {
-                            waitTime -= Time.deltaTime;
-                     }
-              }
+        if (Vector2.Distance(transform.position, moveSpots[nextSpot].position) < 0.2f) {
+            if (waitTime <= 0) {
+                previousSpot = nextSpot;
+                nextSpot = moveForward ? nextSpot + 1 : nextSpot - 1;
+                waitTime = startWaitTime;
+            } else {
+                waitTime -= Time.deltaTime;
+            }
+        }
 
-              //switch movement direction
-              if (nextSpot == 0) {moveForward = true; }
-              else if (nextSpot == (moveSpots.Length -1)) { moveForward = false; }
+        if (nextSpot == 0) {
+            moveForward = true;
+        } else if (nextSpot == moveSpots.Length - 1) {
+            moveForward = false;
+        }
 
-              //turning the enemy
-              if (previousSpot < 0){ previousSpot = moveSpots.Length -1; }
-              else if (previousSpot > moveSpots.Length -1){ previousSpot = 0; }
+        if ((previousSpot == 0 && faceRight) || 
+            (previousSpot == moveSpots.Length - 1 && !faceRight)) {
+            NPCTurn();
+        }
+    }
 
-              if ((previousSpot == 0) && (faceRight)){ NPCTurn(); }
-              else if ((previousSpot == (moveSpots.Length -1)) && (!faceRight)) { NPCTurn(); }
-              // NOTE1: If faceRight does not change, try reversing !faceRight, above
-              // NOTE2: If NPC faces the wrong direction as it moves, set the sprite Scale X = -1.
-
-       }
-
-       private void NPCTurn(){
-              // NOTE: Switch player facing label (avoids constant turning)
-              faceRight = !faceRight;
-
-              // NOTE: Multiply player's x local scale by -1.
-              Vector3 theScale = transform.localScale;
-              theScale.x *= -1;
-              transform.localScale = theScale;
-       }
-
+    private void NPCTurn() {
+        faceRight = !faceRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "hairBall") {
             Debug.Log("Hit by hairball");
             currHealth -= 1;
             healthBar.UpdateHealth(currHealth, startHealth);
-            
-            if(currHealth == 0){
+
+            if (currHealth == 0) {
                 Destroy(gameObject);
             }
-            
         }
     }
 
@@ -156,5 +150,4 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
             }
         }
     }
-
 }
