@@ -25,7 +25,7 @@ public class ShowTextOnCollision : MonoBehaviour
             isPlayerInRange = true;
             if (popupText != null)
             {
-                popupText.text = "Press the space bar to enter ghost mode and pass through walls!\n(Press R to close)"; // Set the message
+                popupText.text = "Press the space bar to enter ghost mode and pass through walls and other obstacles!\n(Press R to close)"; // Set the message
             }
         }
     }
