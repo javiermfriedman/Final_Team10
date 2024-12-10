@@ -156,7 +156,8 @@ public class EnemyMoveShoot : MonoBehaviour {
               }
                 if (enemyCurrHealth <= 0)
                 {
-                    Destroy(gameObject);
+                     spawner.spawn_token();
+                     Destroy(gameObject);
                 }
        }
 

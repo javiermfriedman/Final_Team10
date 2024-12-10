@@ -30,3 +30,4 @@ public class witch_spawn : MonoBehaviour
         Instantiate(token, spawnPoint.position, spawnPoint.rotation);
     }
 }
+    
