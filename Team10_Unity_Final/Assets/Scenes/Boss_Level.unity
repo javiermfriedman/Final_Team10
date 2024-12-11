@@ -160,7 +160,7 @@ MonoBehaviour:
   startTimeBtwShots: 2
   projectile: {fileID: 6557025594710406784, guid: f9f9358e6881941f8b851336544c8cd5, type: 3}
   healthBar: {fileID: 1744908009}
-  enemyMaxHealth: 5
+  enemyMaxHealth: 20
   enemyCurrHealth: 30
   attackRange: 10
   isAttacking: 0
@@ -478,11 +478,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2388063105721190364, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6982666851903421710, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312830754120640022, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312830754120640022, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7736884300607842895, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
       propertyPath: m_Name
