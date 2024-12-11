@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 686822518}
   zombie: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
-  giant: {fileID: 5969920685991602519, guid: aef9771dfda5b4b11a0a53eb18ef4762, type: 3}
+  giant: {fileID: 8740380340188439154, guid: 0eef7179982bf4d0a9df0595fb80e482, type: 3}
   bats: {fileID: 299849951120159430, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
   token: {fileID: 5671702366312033627, guid: 5dba7f9b4f8804226b73aeb4d24ff527, type: 3}
 --- !u!4 &686822518
@@ -498,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7736884300607842895, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8694108925493916879, guid: 8f0cfa5f203fc430da55a69b80409741, type: 3}
       propertyPath: m_Size.x

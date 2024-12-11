@@ -20,6 +20,8 @@ public class giantSentry : MonoBehaviour
     private Vector3 lastKnownPlayerPosition; // Stores the last transform of the player before ghost mode
     private bool isChasingGhost;
 
+    private bool faceRight = true; // Track the current direction of the NPC
+
     void Start()
     {
         attack = false;
@@ -69,12 +71,14 @@ public class giantSentry : MonoBehaviour
     {
         if (target != null)
         {
+            HandleDirection(target.position.x); // Check direction and turn
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
 
     void MoveTowardLastKnownPosition()
     {
+        HandleDirection(lastKnownPlayerPosition.x); // Check direction and turn
         transform.position = Vector2.MoveTowards(transform.position, lastKnownPlayerPosition, speed * Time.deltaTime);
 
         // Stop chasing if the sentry reaches the last known position
@@ -82,6 +86,23 @@ public class giantSentry : MonoBehaviour
         {
             isChasingGhost = false;
         }
+    }
+
+    void HandleDirection(float targetXPosition)
+    {
+        bool shouldFaceRight = targetXPosition > transform.position.x;
+        if (shouldFaceRight != faceRight)
+        {
+            NPCTurn();
+        }
+    }
+
+    void NPCTurn()
+    {
+        faceRight = !faceRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     void OnCollisionEnter2D(Collision2D other)
