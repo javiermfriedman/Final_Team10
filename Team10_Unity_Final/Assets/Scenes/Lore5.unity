@@ -370,8 +370,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "It\u2019s all coming back to me now... I wasn\u2019t just lost in this
-    graveyard\u2014I was meant to be here. I must restore this artifact. "
+  m_Text: These enemies are sure getting weirder and weirder... I wonder if I'm near
+    the end of finding these fragments!
 --- !u!222 &866288994
 CanvasRenderer:
   m_ObjectHideFlags: 0
