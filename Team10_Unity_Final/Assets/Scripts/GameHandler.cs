@@ -144,4 +144,8 @@ public class GameHandler : MonoBehaviour {
         SceneManager.LoadScene("Scene6");
     }
 
+    public void LoadBossLevel() { 
+        SceneManager.LoadScene("Boss_Level");
+    }
+
 }

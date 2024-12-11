@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lore5.unity
     guid: b00d211730fc74cf9ad63b47b87d196f
+  - enabled: 1
+    path: Assets/Scenes/Lore6.unity
+    guid: 2fd848b6604e54211bda69115a766c49
+  - enabled: 1
+    path: Assets/Scenes/Boss_Level.unity
+    guid: 6c975973f257f41488126e74753affc3
   m_configObjects: {}
