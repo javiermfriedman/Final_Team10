@@ -25,7 +25,7 @@ public class EnterBelowPopUpText : MonoBehaviour
             isPlayerInRange = true;
             if (popupText != null)
             {
-                popupText.text = "This portal is curiously placed over there... Maybe I should get near it!\n(Press R to close)"; // Set the message
+                popupText.text = "What is this suspicous fragment... Maybe I should get near it!\n(Press R to close)"; // Set the message
             }
         }
     }
