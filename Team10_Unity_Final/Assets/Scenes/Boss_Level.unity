@@ -160,7 +160,7 @@ MonoBehaviour:
   startTimeBtwShots: 2
   projectile: {fileID: 6557025594710406784, guid: f9f9358e6881941f8b851336544c8cd5, type: 3}
   healthBar: {fileID: 1744908009}
-  enemyMaxHealth: 2
+  enemyMaxHealth: 5
   enemyCurrHealth: 30
   attackRange: 10
   isAttacking: 0

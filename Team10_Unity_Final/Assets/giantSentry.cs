@@ -7,8 +7,8 @@ public class giantSentry : MonoBehaviour
     private float speed = 2f;
     private float attackRange = 20f;
 
-    private int startHealth = 15; 
-    private int currHealth = 14;
+    public int startHealth = 15; 
+    public int currHealth = 14;
 
     private bool attack;
     private Transform target;
