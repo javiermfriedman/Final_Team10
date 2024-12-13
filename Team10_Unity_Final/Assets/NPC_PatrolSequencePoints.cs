@@ -137,12 +137,12 @@ public class NPC_PatrolSequencePoints : MonoBehaviour {
     }
 
     void OnCollisionStay2D(Collision2D other) {
-        float damageCooldown = 1f;
+        float damageCooldown = 2f;
         float nextDamageTime = 1f;
         if (other.gameObject.CompareTag("Player")) {
             if (Time.time >= nextDamageTime) {
                 if (gameHandler != null) {
-                    gameHandler.playerGetHit(30);  // Apply damage
+                    gameHandler.playerGetHit(10);  // Apply damage
                 } else {
                     Debug.LogError("GameHandler is not assigned!");
                 }
