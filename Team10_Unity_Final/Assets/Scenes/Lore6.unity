@@ -362,7 +362,7 @@ MonoBehaviour:
     m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 55
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -370,7 +370,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'LORE6 TODO '
+  m_Text: "I've gathered all the fragments of... whatever this thing is. I can feel
+    it\u2014I'm close to something big. The end, maybe?"
 --- !u!222 &866288994
 CanvasRenderer:
   m_ObjectHideFlags: 0
