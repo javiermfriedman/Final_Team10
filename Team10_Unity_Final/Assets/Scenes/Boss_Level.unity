@@ -294,7 +294,7 @@ MonoBehaviour:
   zombie: {fileID: 2839125673029407793, guid: d627a3dc23a624461a3dfd7c41d34d71, type: 3}
   giant: {fileID: 8740380340188439154, guid: 0eef7179982bf4d0a9df0595fb80e482, type: 3}
   bats: {fileID: 299849951120159430, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
-  token: {fileID: 5671702366312033627, guid: 5dba7f9b4f8804226b73aeb4d24ff527, type: 3}
+  token: {fileID: 782996048933326678, guid: bb9607de576d5429292f9962f678fa53, type: 3}
 --- !u!4 &686822518
 Transform:
   m_ObjectHideFlags: 0
