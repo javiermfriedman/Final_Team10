@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,69 +21,65 @@ public class GameHandler : MonoBehaviour {
     private string sceneName;
     public static string lastLevelDied;  //allows replaying the Level where you died
 
-    void Start(){
+    [SerializeField] private AudioClip hitSound; // Sound to play when hit
+    private AudioSource audioSource;            // AudioSource component
+
+    void Start() {
         player = GameObject.FindWithTag("Player");
         sceneName = SceneManager.GetActiveScene().name;
         playerHealth = StartPlayerHealth;
         updateStatsDisplay();
+
+        // Ensure the AudioSource is attached to this GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
-    public void playerGetTokens(int newTokens){
+    public void playerGetTokens(int newTokens) {
         gotTokens += newTokens;
         updateStatsDisplay();
     }
-    public void testPrint(){
+
+    public void testPrint() {
         Debug.Log("javiCheck");
     }
 
-    public void playerGetHit(int damage){
-        // Debug.Log("in playerGetHit");
-        // Debug.Log("Damage currently: " + damage);
-        // Debug.Log("Is defending: " + isDefending);
-        
-            // Debug.Log("In is defending");
-            // Debug.Log("The damage passed in: " + damage);
+    public void playerGetHit(int damage) {
         playerHealth -= damage;
-        Debug.Log("player health at " + playerHealth);
-        // Debug.Log("The playerHealth after damage sub: " + playerHealth);
-        
+
+        // Play the hit sound
+        if (hitSound != null && audioSource != null) {
+            audioSource.PlayOneShot(hitSound);
+        } else {
+            Debug.LogWarning("Hit sound or AudioSource is missing!");
+        }
+
+        Debug.Log("Player health: " + playerHealth);
         updateStatsDisplay();
-        
-        // if (damage > 0){
-        //     player.GetComponent<PlayerHurt>().playerHit();  //play GetHit animation
-        // }
-    
 
-        // // What does this part mean?
-        // if (playerHealth > StartPlayerHealth){
-        //     playerHealth = StartPlayerHealth;
-        //     updateStatsDisplay();
-        // }
-
-        if (playerHealth <= 0){
+        if (playerHealth <= 0) {
             playerHealth = 0;
             updateStatsDisplay();
             playerDies();
         }
     }
 
-    public void updateStatsDisplay(){
+    public void updateStatsDisplay() {
         Text healthTextTemp = healthText.GetComponent<Text>();
         healthTextTemp.text = "Health: " + playerHealth;
 
         Text tokensTextTemp = tokensText.GetComponent<Text>();
-        Debug.Log("The frag count: " + gotTokens);
         tokensTextTemp.text = "Fragments: " + gotTokens;
     }
 
-    public void playerDies(){
-        //player.GetComponent<PlayerHurt>().playerDead();  //play Death animation
+    public void playerDies() {
         lastLevelDied = sceneName;  //allows replaying the Level where you died
         StartCoroutine(DeathPause());
-        //ReplayLastLevel();
     }
 
-    IEnumerator DeathPause(){
+    IEnumerator DeathPause() {
         player.GetComponent<playerMove>().isAlive = false;
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("DeathScene");
@@ -109,43 +104,43 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void QuitGame() {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #else
+#else
         Application.Quit();
-        #endif
+#endif
     }
 
     public void Credits() {
         SceneManager.LoadScene("Credits");
     }
 
-    public void LoadLevel1() { 
+    public void LoadLevel1() {
         SceneManager.LoadScene("Scene1");
     }
 
-    public void LoadLevel2() { 
+    public void LoadLevel2() {
         SceneManager.LoadScene("Scene2");
     }
 
-    public void LoadLevel3() { 
+    public void LoadLevel3() {
         SceneManager.LoadScene("Scene3");
     }
 
-    public void LoadLevel4() { 
+    public void LoadLevel4() {
         SceneManager.LoadScene("Scene4");
     }
 
-    public void LoadLevel5() { 
+    public void LoadLevel5() {
         SceneManager.LoadScene("scene5");
     }
 
-    public void LoadLevel6() { 
+    public void LoadLevel6() {
         SceneManager.LoadScene("Scene6");
     }
 
-    public void LoadBossLevel() { 
+    public void LoadBossLevel() {
         SceneManager.LoadScene("Boss_Level");
     }
-
 }
+

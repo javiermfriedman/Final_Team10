@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 4494114826240884622}
   - component: {fileID: 7602011988994739292}
   - component: {fileID: 8919962928701233758}
+  - component: {fileID: 1875207629637169736}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -753,3 +754,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TagToIgnore: Ignored
+--- !u!114 &1875207629637169736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736884300607842895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d3f7ab9759e4e38a2e7e743f2ccf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
