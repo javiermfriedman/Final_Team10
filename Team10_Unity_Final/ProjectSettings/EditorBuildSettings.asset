@@ -48,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lore0.unity
     guid: e2ff31a70523e4808b02ff7d1158ed87
   - enabled: 1
+    path: Assets/Scenes/Win_scene.unity
+    guid: 9329719049bef474096682754743d727
+  - enabled: 1
     path: Assets/Scenes/Lore4.unity
     guid: 5ace66e701f904627983dd60d77c2d61
   - enabled: 1
