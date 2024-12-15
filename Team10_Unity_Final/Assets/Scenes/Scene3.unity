@@ -60375,6 +60375,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GAMEHANDLER_CANVAS
       objectReference: {fileID: 0}
+    - target: {fileID: 6416940203138621276, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      propertyPath: totem
+      value: 
+      objectReference: {fileID: 1901225471}
+    - target: {fileID: 6416940203138621276, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1924261807}
     - target: {fileID: 8311196727565171663, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
       propertyPath: m_RootOrder
       value: 6

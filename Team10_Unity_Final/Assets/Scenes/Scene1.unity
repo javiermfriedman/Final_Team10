@@ -94778,6 +94778,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GAMEHANDLER_CANVAS (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6416940203138621276, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      propertyPath: totem
+      value: 
+      objectReference: {fileID: 672897516410846142}
+    - target: {fileID: 6416940203138621276, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1307168359}
     - target: {fileID: 7182328451199210887, guid: bcf1e1555595e4fd29971832f4163a87, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -104938,3 +104946,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9374b6be82134ddc803e39b72338ade, type: 3}
+--- !u!4 &672897516410846142 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4498167394972173794, guid: a9374b6be82134ddc803e39b72338ade, type: 3}
+  m_PrefabInstance: {fileID: 672897516410846141}
+  m_PrefabAsset: {fileID: 0}
