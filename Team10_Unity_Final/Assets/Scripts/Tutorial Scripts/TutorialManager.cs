@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Use this if you're using the standard UI Text
-using UnityEngine.SceneManagement; // Required to get the active scene
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
     public Text tutorialText; // Reference to the Text component
+    public GameObject tutorialBackground; // Reference to the background GameObject
 
     private Queue<string> tutorialMessages; // Queue to hold the tutorial messages
     private bool isTutorialActive = true; // Flag to check if the tutorial is active
@@ -16,8 +17,13 @@ public class TutorialManager : MonoBehaviour
         // Initialize the queue
         tutorialMessages = new Queue<string>();
 
+        // Ensure the tutorial UI starts hidden
+        tutorialBackground.SetActive(false);
+        Debug.Log("Tutorial background hidden at start.");
+
         // Determine the current level (scene) and load the corresponding messages
         string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log($"Current Scene: {currentScene}");
 
         if (currentScene == "Tutorial")
         {
@@ -33,9 +39,9 @@ public class TutorialManager : MonoBehaviour
 
     void Update()
     {
-        // Check for space bar input to display the next message
         if (isTutorialActive && Input.GetKeyDown(KeyCode.R))
         {
+            Debug.Log("R key pressed.");
             DisplayNextMessage();
         }
     }
@@ -48,15 +54,23 @@ public class TutorialManager : MonoBehaviour
             return;
         }
 
+        // Activate the tutorial UI
+        tutorialBackground.SetActive(true);
+        Debug.Log("Tutorial background activated.");
+
         // Get the next message from the queue
         string message = tutorialMessages.Dequeue();
         tutorialText.text = message; // Update the text with the current message
+        Debug.Log($"Displayed message: {message}");
     }
 
     void EndTutorial()
     {
+        // Deactivate the tutorial UI
+        tutorialBackground.SetActive(false);
+        Debug.Log("Tutorial background hidden. Tutorial ended.");
+
         tutorialText.text = ""; // Clear the tutorial text
         isTutorialActive = false; // Mark the tutorial as finished
-        // Add any additional logic for when the tutorial ends
     }
 }

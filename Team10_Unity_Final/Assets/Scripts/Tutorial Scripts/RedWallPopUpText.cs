@@ -7,13 +7,19 @@ using UnityEngine.SceneManagement; // Required to get the active scene
 public class RedWallPopUpText : MonoBehaviour
 {
     public Text popupText; // Reference to the Text component
+    public GameObject popupBackground; // Reference to the background GameObject
     private bool isPlayerInRange = false; // Flag to check if the player is in range
 
     void Start()
     {
+        // Ensure the text and background are hidden at the start
         if (popupText != null)
         {
-            popupText.text = ""; // Make sure the text is empty at the start
+            popupText.text = "";
+        }
+        if (popupBackground != null)
+        {
+            popupBackground.SetActive(false); // Hide the background initially
         }
     }
 
@@ -23,22 +29,32 @@ public class RedWallPopUpText : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
+
             if (popupText != null)
             {
-                popupText.text = "Red obstacles are warded, which means you cannot pass through them!\n(Press R to close)"; // Set the message
+                popupText.text = "Red obstacles are warded, which means you cannot pass through them!\n(Press R to close)";
+            }
+            if (popupBackground != null)
+            {
+                popupBackground.SetActive(true); // Show the background
             }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Clear the text when the player leaves the trigger area
+        // Clear the text and hide the background when the player leaves the trigger area
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+
             if (popupText != null)
             {
                 popupText.text = ""; // Clear the text
+            }
+            if (popupBackground != null)
+            {
+                popupBackground.SetActive(false); // Hide the background
             }
         }
     }
@@ -52,6 +68,12 @@ public class RedWallPopUpText : MonoBehaviour
             {
                 popupText.text = ""; // Clear the text
             }
+            if (popupBackground != null)
+            {
+                popupBackground.SetActive(false); // Hide the background
+            }
+
+            isPlayerInRange = false; // Reset the flag
         }
     }
 }
