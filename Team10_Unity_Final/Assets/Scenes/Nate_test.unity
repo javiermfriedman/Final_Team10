@@ -393,17 +393,6 @@ MonoBehaviour:
   healthLoot: {fileID: 0}
   maxHealth: 10
   currentHealth: 0
---- !u!114 &1657029465 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1185402206180944990, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
-  m_PrefabInstance: {fileID: 6706556883664840529}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fcb9aa7849f4a488d7044993516fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1883777997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,10 +652,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5831507887522019445, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1657029465}
     - target: {fileID: 6720111401043807967, guid: 9ef0eaf0bea4c4999b3c7e0c2fd768b5, type: 3}
       propertyPath: isAttacking
       value: 0
