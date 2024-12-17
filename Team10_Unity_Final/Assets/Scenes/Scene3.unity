@@ -101348,6 +101348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 887596622960378558, guid: b0fb8ed36ad3b40f6aae8961f95465d7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5807656189635390603, guid: b0fb8ed36ad3b40f6aae8961f95465d7, type: 3}
       propertyPath: m_RootOrder
       value: 7
