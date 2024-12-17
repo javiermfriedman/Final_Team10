@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 88576212}
     - target: {fileID: 7732318371139331512, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadBossLevel
+      value: LoadWinScene
       objectReference: {fileID: 0}
     - target: {fileID: 7732318371139331512, guid: eb8a1e9619dbb4fb1a013272ad30bbb6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -778,8 +778,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: I did it... The witch is finally defeated! It wasn't easy, but my perseverance
-    paid off. This place is safe again,!! It's time to leave this chapter behind
-    and look forward to new adventures...
+    paid off. This place is safe again!! It's time to leave this chapter behind and
+    look forward to new adventures...
 --- !u!222 &1641097138
 CanvasRenderer:
   m_ObjectHideFlags: 0

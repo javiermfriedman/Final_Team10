@@ -160,5 +160,9 @@ public class GameHandler : MonoBehaviour {
     public void LoadBossLevel() {
         SceneManager.LoadScene("Boss_Level");
     }
+
+    public void LoadWinScene() {
+        SceneManager.LoadScene("Win_scene");
+    }
 }
 

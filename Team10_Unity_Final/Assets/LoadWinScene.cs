@@ -12,7 +12,7 @@ public class LoadWinScene : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Load the specified scene
-            SceneManager.LoadScene("Win_scene");
+            SceneManager.LoadScene("WinLore");
         }
     }
 }
