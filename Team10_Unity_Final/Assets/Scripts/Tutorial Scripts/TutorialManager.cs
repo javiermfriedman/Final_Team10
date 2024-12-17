@@ -19,18 +19,17 @@ public class TutorialManager : MonoBehaviour
 
         // Ensure the tutorial UI starts hidden
         tutorialBackground.SetActive(false);
-        Debug.Log("Tutorial background hidden at start.");
 
         // Determine the current level (scene) and load the corresponding messages
         string currentScene = SceneManager.GetActiveScene().name;
-        Debug.Log($"Current Scene: {currentScene}");
 
         if (currentScene == "Tutorial")
         {
             tutorialMessages.Enqueue("Where am I? What is this place? I must find out!\n(R to continue)");
             tutorialMessages.Enqueue("WASD or arrow keys to move...\n(R to continue)");
             tutorialMessages.Enqueue("Looks like I'm in a graveyard! I wonder where this path leads... \n(R to continue)");
-            tutorialMessages.Enqueue("I need to continue exploring this space to see what is in store for me...\n(R to finish)");
+            tutorialMessages.Enqueue("I need to continue exploring this space to see what is in store for me...\n(R to continue)");
+            tutorialMessages.Enqueue("It seems like I should follow this compass in the bottom right corner...\n(R to finish)");
         }
 
         // Start the tutorial
@@ -41,7 +40,6 @@ public class TutorialManager : MonoBehaviour
     {
         if (isTutorialActive && Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("R key pressed.");
             DisplayNextMessage();
         }
     }
@@ -56,19 +54,16 @@ public class TutorialManager : MonoBehaviour
 
         // Activate the tutorial UI
         tutorialBackground.SetActive(true);
-        Debug.Log("Tutorial background activated.");
 
         // Get the next message from the queue
         string message = tutorialMessages.Dequeue();
         tutorialText.text = message; // Update the text with the current message
-        Debug.Log($"Displayed message: {message}");
     }
 
     void EndTutorial()
     {
         // Deactivate the tutorial UI
         tutorialBackground.SetActive(false);
-        Debug.Log("Tutorial background hidden. Tutorial ended.");
 
         tutorialText.text = ""; // Clear the tutorial text
         isTutorialActive = false; // Mark the tutorial as finished
