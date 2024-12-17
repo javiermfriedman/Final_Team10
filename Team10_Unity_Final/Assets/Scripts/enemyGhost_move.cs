@@ -12,6 +12,7 @@ public class enemyGhost_move : MonoBehaviour
     private float waitTime;
 
     public int EnemyLives = 1;
+    private int startHealth = 3;
     private GameHandler gameHandler;
 
     public float attackRange = 10;
@@ -19,6 +20,9 @@ public class enemyGhost_move : MonoBehaviour
     private float scaleX;
 
     public float knockBackForce = 0f;
+
+    [SerializeField] private floatingHealthBar healthBar;
+
 
     private EnemyMeleeDamage meleeDamage;
     public SpriteToggle spriteToggle;
@@ -33,6 +37,8 @@ public class enemyGhost_move : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         scaleX = gameObject.transform.localScale.x;
+        healthBar = GetComponentInChildren<floatingHealthBar>();
+        startHealth = EnemyLives;
 
         if (artObject != null)
         {
@@ -99,6 +105,7 @@ public class enemyGhost_move : MonoBehaviour
         if (other.gameObject.tag == "hairBall")
         {
             EnemyLives -= 1;
+            healthBar.UpdateHealth(EnemyLives, startHealth);
 
             // Trigger the flash effect
             if (spriteRenderer != null)
