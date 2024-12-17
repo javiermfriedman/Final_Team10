@@ -25,11 +25,21 @@ public class EnemyMoveHit : MonoBehaviour
 
     private Coroutine damageCoroutine; // Reference to the damage coroutine
 
+    [Header("Audio Settings")]
+    public AudioClip zombieGrowl; // Sound when the zombie sees the player
+    private AudioSource audioSource;
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
         scaleX = gameObject.transform.localScale.x;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -97,6 +107,12 @@ public class EnemyMoveHit : MonoBehaviour
             {
                 damageCoroutine = StartCoroutine(DealDamageOverTime(other.gameObject));
             }
+
+            //Play attack sound
+            if (zombieGrowl != null)
+            {
+                audioSource.PlayOneShot(zombieGrowl);
+            }
         }
     }
 
@@ -136,3 +152,4 @@ public class EnemyMoveHit : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
+

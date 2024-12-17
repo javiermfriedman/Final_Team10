@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3989408906333354289}
   - {fileID: 7389588053396378096}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7313598699417256451
 Rigidbody2D:
@@ -129,6 +129,7 @@ MonoBehaviour:
   isAttacking: 0
   knockBackForce: 0
   spriteToggle: {fileID: 0}
+  zombieGrowl: {fileID: 8300000, guid: a5cb3898f9a2b48bc9e5a0d5deb02423, type: 3}
 --- !u!1 &5898969357215583962
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +279,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: b800caf93e1324c6cb8cf166e40cb10b, type: 2}
   m_audioClip: {fileID: 8300000, guid: a5cb3898f9a2b48bc9e5a0d5deb02423, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.836
   m_Pitch: 1
   Loop: 0
