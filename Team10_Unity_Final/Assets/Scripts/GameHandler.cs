@@ -9,6 +9,8 @@ public class GameHandler : MonoBehaviour {
     public static int playerHealth = 100;
     public int StartPlayerHealth = 100;
     public GameObject healthText;
+    private Animator playerAnimator; // Reference to the Animator
+    private PlayerHurt playerHurt;  // Reference to the PlayerHurt script
 
     public static int gotTokens = 0;
     public GameObject tokensText;
@@ -29,6 +31,11 @@ public class GameHandler : MonoBehaviour {
         sceneName = SceneManager.GetActiveScene().name;
         playerHealth = StartPlayerHealth;
         updateStatsDisplay();
+         playerAnimator = player.GetComponentInChildren<Animator>();
+        if (playerAnimator == null) {
+        Debug.LogWarning("Animator component not found on the player!");
+}
+        playerHurt = player.GetComponent<PlayerHurt>();
 
         // Ensure the AudioSource is attached to this GameObject
         audioSource = GetComponent<AudioSource>();
@@ -55,6 +62,17 @@ public class GameHandler : MonoBehaviour {
         } else {
             Debug.LogWarning("Hit sound or AudioSource is missing!");
         }
+        //play hurt animation
+        Debug.Log("Triggering GetHurt animation");
+        if (playerHurt != null) {
+            Debug.Log("Triggering GetHurt animation");
+            playerHurt.playerHit();
+        }
+
+        // if (playerAnimator != null) {
+        //     Debug.Log("Triggering GetHurt animation");
+        //  playerAnimator.SetTrigger("gethurt");
+// }
 
         Debug.Log("Player health: " + playerHealth);
         updateStatsDisplay();
