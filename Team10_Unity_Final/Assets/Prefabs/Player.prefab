@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 4494114826240884622}
   - component: {fileID: 3006136798628205620}
   - component: {fileID: 7602011988994739292}
+  - component: {fileID: 512061727721713694}
   - component: {fileID: 8919962928701233758}
   - component: {fileID: 1875207629637169736}
   m_Layer: 0
@@ -613,7 +614,7 @@ Transform:
   - {fileID: 651545494001598641}
   - {fileID: 7269655707271812574}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8694108925493916879
 BoxCollider2D:
@@ -756,6 +757,20 @@ MonoBehaviour:
   ghostModeDuration: 5
   cooldownDuration: 5
   cooldownImage: {fileID: 0}
+--- !u!114 &512061727721713694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736884300607842895}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5796558f472494d5e95f17eda74fc1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  rb2D: {fileID: 0}
 --- !u!114 &8919962928701233758
 MonoBehaviour:
   m_ObjectHideFlags: 0
