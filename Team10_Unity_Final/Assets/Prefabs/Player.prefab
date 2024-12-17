@@ -734,8 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5796558f472494d5e95f17eda74fc1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  rb2D: {fileID: 0}
+  animator: {fileID: 7543307942002066018}
+  rb2D: {fileID: 6982666851903421710}
 --- !u!114 &7602011988994739292
 MonoBehaviour:
   m_ObjectHideFlags: 0
