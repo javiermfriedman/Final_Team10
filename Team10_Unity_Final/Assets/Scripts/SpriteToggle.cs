@@ -49,7 +49,8 @@ public class SpriteToggle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canEnterGhostMode) // Check if spacebar is pressed and cooldown is over
+        //JUST CHANGED HERE
+        if (Input.GetButtonDown("GhostMode") && canEnterGhostMode) // Check if spacebar is pressed and cooldown is over
         {
             if (!isGhostMode)
             {
